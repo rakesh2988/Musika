@@ -1,0 +1,106 @@
+<div style="align-content:center;">
+  <div class="col-md-6 col-md-offset-3 cover_login_register  cover_login_register_register">
+    <h2>New User Registration</h2>
+    <form name="form" (ngSubmit)="register()" #formDir="ngForm" [formGroup]="registerForm" novalidate>
+      <!--<div class="form-group">
+        <label>User Type</label>
+        <div class="register_form">
+          <input type="radio" id="test1" value="Event Organizer" formControlName="UserType" required><label for="test1" checked> Event Organizer</label>
+          <br />
+          <input type="radio" id="test2" value="User" formControlName="UserType" required> <label for="test2">User</label>
+          <br>
+          <span class="text-danger" *ngIf="UserType?.invalid && formDir.submitted">
+            User Type required.
+          </span>
+        </div>
+      </div>-->
+      <div class="form-group">
+        <label for="email">E-Mail Id</label>
+        <input type="email" class="form-control" required formControlName="Email" />
+        <span class="text-danger" [hidden]="Email?.errors?.pattern" *ngIf="Email?.invalid && formDir.submitted">
+          Email is required.
+        </span>
+        <span class="text-danger" [hidden]="!Email?.errors?.pattern">
+          Invalid pattern
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" class="form-control" name="username" formControlName="UserName" required />
+        <span class="text-danger" *ngIf="UserName?.invalid && formDir.submitted">
+          UserName is required.
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" name="password" formControlName="Password" required />
+        <span class="text-danger" *ngIf="Password?.invalid && formDir.submitted">
+          Password is required.
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" name="address" formControlName="Addres" required />
+        <span class="text-danger" *ngIf="Addres?.invalid && formDir.submitted">
+          Address is required.
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="country">Country</label>
+        <input type="text" class="form-control" name="country" formControlName="Country" required />
+        <span class="text-danger" *ngIf="Country?.invalid && formDir.submitted">
+          Country is required.
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="state">State/Province</label>
+        <input type="text" class="form-control" name="state" formControlName="State" />
+        <!--<span class="text-danger" *ngIf="State?.invalid && formDir.submitted">
+          State is required.
+        </span>-->
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" name="city" formControlName="City" required />
+        <span class="text-danger" *ngIf="City?.invalid && formDir.submitted">
+          City is required.
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="postalcode">Postal Code</label>
+        <input type="text" class="form-control" name="postalcode" formControlName="PostalCode" required />
+        <span class="text-danger" *ngIf="PostalCode?.invalid && formDir.submitted">
+          Postal Code is required.
+        </span>
+      </div>
+      <div class="form-group">
+        <label for="phonenumber">Phone Number</label>
+        <input type="text" class="form-control" name="phonenumber" formControlName="PhoneNumber" required />
+        <span class="text-danger" *ngIf="PhoneNumber?.invalid && formDir.submitted">
+          Phone Number is required.
+        </span>
+        <!--<span class="text-danger" [hidden]="!PhoneNumber?.errors?.pattern && !PhoneNumber?.errors?.minlength">
+          Invalid pattern
+        </span>-->
+      </div>
+
+      <div class="form-group login_page">
+        <input type="submit" [disabled]="loading" value="Register" class="btn btn-primary" />
+        <p class={{msgcss}} *ngIf="IsMessage"><b>{{ responseMessage }} </b> </p>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+
+      </div>
+      <div class="form-group register_page">
+        <a [routerLink]="['/login']" class="btn btn-link">Login</a>
+        <!--<a [routerLink]="['/forgetpassword']" class="btn btn-link">Forget Password</a>-->
+      </div>
+    </form>
+  </div>
+</div>
+<div id="myModal" [style.display]="!IsPopup ? 'none':'inherit'" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close" (click)="closepopup();">&times;</span>
+    <p>User Register Successfully.<br/>Please Check Your E-Mail for Account Activation.</p>
+  </div>
+</div>

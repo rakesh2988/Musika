@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2d44265d64a14671ba9ba50971a2641b" Name="Diagram1" ZoomLevel="77">
+        <EntityTypeShape EntityType="MusikaModel.Ads" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.ArtistGenre" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.ArtistPhotos" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.ArtistRelated" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MusikaModel.ArtistsNotLatin" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MusikaModel.Genre" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MusikaModel.HotTour" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MusikaModel.MSource" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.MusicSource" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MusikaModel.Notification_test" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="MusikaModel.NotificationSend" Width="1.5" PointX="4.75" PointY="9.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingInventory" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.TourPerformers" Width="1.5" PointX="6.75" PointY="10.75" />
+        <EntityTypeShape EntityType="MusikaModel.TourPhoto" Width="1.5" PointX="8.75" PointY="10.75" />
+        <EntityTypeShape EntityType="MusikaModel.UsCities" Width="1.5" PointX="10.75" PointY="10.75" />
+        <EntityTypeShape EntityType="MusikaModel.UserArtists" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.UserDevices" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="MusikaModel.UserFriends" Width="1.5" PointX="2.75" PointY="12.75" />
+        <EntityTypeShape EntityType="MusikaModel.UserGoing" Width="1.5" PointX="12.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MusikaModel.UserNotifications" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MusikaModel.UserSettings" Width="1.5" PointX="4.75" PointY="13.75" />
+        <EntityTypeShape EntityType="MusikaModel.UserTourDate" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.UtcTimeZone" Width="1.5" PointX="14.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MusikaModel.Venue" Width="1.5" PointX="6.75" PointY="14.75" />
+        <EntityTypeShape EntityType="MusikaModel.CountryCodes" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingCategory" Width="1.5" PointX="11.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingInventoryDetails" Width="1.5" PointX="13.375" PointY="15.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEvents" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingInventoryDetailsNew" Width="1.5" PointX="2.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingInventoryNew" Width="1.5" PointX="17.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventsNew" Width="2" PointX="17.375" PointY="4.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventTickets" Width="1.75" PointX="17.375" PointY="12.75" />
+        <EntityTypeShape EntityType="MusikaModel.CreditCardDetails" Width="1.5" PointX="17.5" PointY="19.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventNewStaff" Width="2" PointX="19.375" PointY="19.75" />
+        <EntityTypeShape EntityType="MusikaModel.Coupons" Width="1.5" PointX="20.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.Users" Width="1.5" PointX="3.375" PointY="20.75" />
+        <EntityTypeShape EntityType="MusikaModel.Events" Width="1.5" PointX="5.75" PointY="20.75" />
+        <EntityTypeShape EntityType="MusikaModel.sysdiagrams" Width="1.5" PointX="15.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MusikaModel.UserActivation" Width="1.5" PointX="17.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MusikaModel.Users_BAK" Width="1.5" PointX="7.75" PointY="20.75" />
+        <EntityTypeShape EntityType="MusikaModel.ArtistBackup" Width="1.5" PointX="20.75" PointY="8.75" />
+        <EntityTypeShape EntityType="MusikaModel.ArtistBackup2" Width="1.5" PointX="22.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.tempEmails" Width="1.5" PointX="19.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventNewStaffTemp" Width="1.5" PointX="21.75" PointY="16.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventsNewTemp" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventTicketConfirmationTemp" Width="1.5" PointX="22.75" PointY="8.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingUsers" Width="1.5" PointX="11.375" PointY="19.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventTicketConfirmation" Width="1.5" PointX="13.375" PointY="19.75" />
+        <EntityTypeShape EntityType="MusikaModel.Artists" Width="5.375" PointX="22.375" PointY="19.75" />
+        <EntityTypeShape EntityType="MusikaModel.TourDate" Width="1.5" PointX="19.375" PointY="22.75" />
+        <EntityTypeShape EntityType="MusikaModel.ImportBulkTicket" Width="1.5" PointX="13.375" PointY="10.75" />
+        <EntityTypeShape EntityType="MusikaModel.Contact" Width="1.5" PointX="24.375" PointY="14.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventTicketsSummary" Width="1.5" PointX="15.375" PointY="22.75" />
+        <EntityTypeShape EntityType="MusikaModel.TicketingEventTicketsSummaryTemp" Width="1.5" PointX="25.375" PointY="0.75" />
+        <EntityTypeShape EntityType="MusikaModel.PaymentStatus" Width="1.5" PointX="3.375" PointY="25.75" />
+        <EntityTypeShape EntityType="MusikaModel.CountriesList" Width="1.5" PointX="25.375" PointY="5.75" />
+        <EntityTypeShape EntityType="MusikaModel.StateList" Width="1.5" PointX="5.375" PointY="25.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

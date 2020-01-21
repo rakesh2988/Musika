@@ -1,0 +1,27 @@
+body {
+}
+.staff_creation h2 {
+  border-bottom: 2px solid #1ad0e7;
+  padding-bottom: 7px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.staff_creation_left .form-group input {
+  border: 1px solid #ccc;
+}
+@media screen and (max-width: 991px) {
+  .staff_creation_left {
+    margin-left: 0px;
+    width: 94%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .staff_creation_left {
+    width: 100%;
+  }
+  .staff_creation_left {
+    padding: 0px;
+  }
+}

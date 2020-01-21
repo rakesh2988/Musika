@@ -1,0 +1,8 @@
+"TourID,ArtistID,ArtistName,About,ImageURL,BannerImage_URL,OnTour,Gender,Main_Genre,Decade,Alternate_Names,CreatedDate,ModifiedDate,Date_Local,Time_Local,RecordStatus,IsTracking,Instagram_Tag,IsGoing,NoOfUserGoing,TourPhotos,ArtistRelated,Venue,UsersGoing,TicketURL,Event_Name,Event_Description,Organizer_Name,Organizer_Description,lstTicket
+13460,1305,Baby Rasta,,https://i.scdn.co/image/bb5b8bc7fe6c1adc9cb734da1988c41c119f6a7c,https://i.scdn.co/image/bb5b8bc7fe6c1adc9cb734da1988c41c119f6a7c,False,Male,latin,2000s,,8/26/2016 06:59:56 PM,10/1/2018 09:29:11 PM,1/25/2019,01:00 AM,MusicGraph,False,Baby Rasta,False,0,,System.Collections.Generic.List`1[Musika.Models.API.View.viewEventRelated],Musika.Models.API.View.ViewEventVenue,System.Collections.Generic.List`1[Musika.Models.API.View.ViewEventUsers],http://23.111.138.246/TicketEventCheckout.aspx,event-23-jan,fgdfgdfgfd,sdogra,dfgdfgfdg,System.Collections.Generic.List`1[Musika.Models.Ticket]
+","VenueID,VenueName,ImageURL,Extended_Address,Display_Location,Slug,Postal_Code,Address,Timezone,VenueCity,VenueState,VenueCountry,VenueLat,VenueLong
+2220,Sob'S,,New York, NY 10014,New York, NY,sob-s,10014,New York, NY 10014,America/New_York,New York,NY,US,40.7300000,-74.0100000
+","UserID,UserName,Email,ThumbnailURL,CreatedDate
+","EventId,Currency,CountryId,RefundPolicy,lstTicketData
+1,USD,55,,System.Collections.Generic.List`1[Musika.Models.TicketData]
+"

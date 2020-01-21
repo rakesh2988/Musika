@@ -1,0 +1,397 @@
+﻿@{
+    ViewBag.Title = "Ticketing Category";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>Ticketing Category</h2>
+<div class="panel panel-inverse" style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);">
+    <div class="panel-heading"></div>
+    <div class="panel-body no-padding">
+
+        <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit/View Category</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <form class="form-horizontal" id="form-category">
+                                    <input type="hidden" value="0" data-element="CategoryId" name="CategoryId" />
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Category Name:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control validate[required]" data-element="CategoryName" name="CategoryName">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Category Price:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control validate[required]" data-element="CategoryPrice" name="CategoryPrice">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Record Status:</label>
+                                        <div class="col-md-4">
+                                            <select class="form-control validate[required]" data-element="RecordStatus" name="RecordStatus">
+                                                <option value="Active">Active</option>
+                                                <option value="In Active">In Active</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <form class="form-horizontal" id="eventdetails" style="display:none">
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Event Name:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_EventName" name="txt_EventName">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">SeatGeek ID:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_SeatGeek_TourID" name="txt_SeatGeek_TourID">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Artist Name:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_ArtistName" name="txt_ArtistName">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Local Date/Time:</label>
+                                        <div class="col-md-4">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" id="datetimepicker1" data-element="txt_Datetime_Local" name="txt_Datetime_Local">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Venue Name:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_ArtistName" name="txt_ArtistName">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue ID:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_SeatGeek_VenuID" name="txt_SeatGeek_VenuID">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Venue Address 1:</label>
+                                        <div class="col-md-4">
+                                            <textarea class="form-control" data-element="txt_Address" name="txt_Address"></textarea>
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue Address 2:</label>
+                                        <div class="col-md-4">
+                                            <textarea class="form-control" data-element="txt_Extended_Address" name="txt_Extended_Address"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Venue Country:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueCountry" name="txt_VenueCountry">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue City:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueCity" name="txt_VenueCity">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Venue State:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueState" name="txt_VenueState">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue Postal:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_Postal_Code" name="txt_Postal_Code">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Venue Lat:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueLat" name="txt_VenueLat">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue Long:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueLong" name="txt_VenueLong">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Venue Timezone:</label>
+                                        <div class="col-md-4">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" data-element="txt_VenueTimezone" name="txt_VenueTimezone">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <div class="col-md-2" id="imgProfile"><div class="sliderimg" style="position:relative; float:left; margin-right:15px; margin-top:0px;"><img src="null" style="width:124px; height:124px;"><img src="23.111.138.246/Areas/Admin/Content/img/cross.png" data-venueid="2585" class="deletephoto" style="position:absolute; top:-5px; right:-5px; width:24px; display:none; cursor:pointer;"></div></div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-2">
+                                                    <input type="file" id="input-image" name="userfile" accept="image/*">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Ticket Url:</label>
+                                        <div class="col-md-4">
+                                            <textarea class="form-control" data-element="txt_TicketURL" name="txt_TicketURL"></textarea>
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Hash Tag:</label>
+                                        <div class="col-md-4">
+                                            <input class="form-control" data-element="txt_HashTag" name="txt_HashTag">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">In App Ticketing:</label>
+                                        <div class="col-md-4">
+                                            <div class="checkbox i-checks">
+                                                <label>
+                                                    <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" data-element="txt_InAppTicketing" name="txt_InAppTicketing" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Total Seats:</label>
+                                        <div class="col-md-4">
+                                            <input type="number" class="form-control" data-element="txt_TotalSeats" name="txt_TotalSeats">
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="slider"></div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <input type="hidden" id="hfDeleted">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="button" class="btn btn-primary" id="btnSaveChanges" value="Save changes">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="form-horizontal padding20" id="form-search-users">
+            <div class="form-group">
+                <label class="col-md-1 text-right">Category Name:</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" data-element="Name" />
+                </div>
+                <div class="col-sm-offset-1 col-md-3">
+                    <input type='button' class='btn btn-info btn-inverse' value="Add" onclick='Add()' />
+                    <input type="submit" class="btn btn-inverse" value="Search" id="btnSearch" onclick="return false;" />
+                </div>
+            </div>
+        </form>
+
+
+
+        <input type="hidden" id="hfSortOrder" value="ASC" />
+        <input type="hidden" id="hfSortColumn" value="CategoryId" />
+        <input type="hidden" id="hfCurrntPageIndex" />
+        <input type="hidden" id="hfTotalCount" />
+
+        <table class="table table-striped table-bordered table-hover datatables-example datatable dtr-inline">
+            <thead>
+                <tr>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        Category Name
+                        <span data-col="CategoryName" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        Category Price
+                        <span data-col="CategoryPrice" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        Status
+                        <span data-col="RecordStatus" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="min-width:250px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyUsers"></tbody>
+        </table>
+
+        <div class="row padding10">
+            <div class="col-md-6" id="page">
+
+            </div>
+            <div class="col-md-6">
+                <nav class="pull-right">
+                    <ul class="pagination" style="margin:0;" id="pagination"></ul>
+                </nav>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Edit/View User</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-10">
+                        <form class="form-horizontal" id="form-user">
+
+
+                            <div class="form-group">
+                                <input type="hidden" data-element="UserId" value="0" />
+                                <input type="hidden" data-userid="UserId" value="0" />
+
+                                <label class="col-md-2 text-right">Email:</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" data-element="Email" readonly />
+                                </div>
+
+                                <label class="col-md-2 text-right">Status:</label>
+                                <div class="col-md-4">
+                                    <div class="col-md-3" style="padding-right:0px;padding-left:3px">
+                                        <label id="lblRecordStatus"></label>
+                                        <label id="lblrating"></label>
+
+                                    </div>
+                                    <div class="col-md-5" style="padding-right:0px;padding-left:3px">
+                                        <!--<select class="form-control validate[required]" data-element="InactivePeriod" style="padding-right:1px;padding-left:1px">
+                                            <option value="-1">Indefinite </option>
+                                            <option value="1">1 Day</option>
+                                            <option value="7">1 Week</option>
+                                            <option value="30">1 Month</option>
+                                        </select>-->
+
+                                    </div>
+
+                                    <div class="col-md-1" style="padding-right:0px;padding-left:0px">
+                                        <input type="button" class="btn btn-primary" id="btnActive" value="Save changes" style="padding-right:2px;padding-left:2px" />
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-md-2 text-right">Name:</label>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control validate[required]" data-element="UserName" />
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="col-md-2" id="imgProfile">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-4">
+                                    <input type="button" class="btn btn-inverse-alt" value="Change Password?" id="btnShowPassword" />
+                                </div>
+                            </div>
+                            <div class="form-group" id="pnlPassword" style="display:none;">
+                                <label class="col-md-2 text-right">New Password:</label>
+                                <div class="col-md-4">
+                                    <input type="password" class="form-control" data-element="Password" id="password" />
+                                </div>
+
+                                <label class="col-md-2 text-right">Confirm Password:</label>
+                                <div class="col-md-4">
+                                    <input type="password" class="form-control" id="confirmPassword" />
+                                </div>
+                            </div>
+
+
+
+                        </form>
+                    </div>
+
+                </div>
+                <div id="slider"></div>
+                <div style="clear:both;"></div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="button" class="btn btn-primary" id="btnSaveChanges" value="Save changes" />
+            </div>
+        </div>
+    </div>
+</div>
+<input type="hidden" id="hdnid" />
+<div class="modal fade" id="myGlobalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-wrapper">
+                    <div class="modal-icon text-center" style="font-size:70px;">
+                        <i class="fa fa-question-circle"></i>
+                    </div>
+                    <div class="modal-text text-center">
+                        <h4>Are you sure?</h4>
+                        <p id="txtGlobal"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="btnGlobalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Areas/Admin/Content/scripts/ticketingCategory-jquery.js"></script>
+}

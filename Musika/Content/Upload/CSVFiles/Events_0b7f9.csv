@@ -1,0 +1,5 @@
+ UserID, GoingUserName, Email, CreatedDate
+ EventId, TicketCategory, TicketType, Price, Quantity, BalanceTickets, PackageStartDate, PackageEndDate
+ 2, e1, Paid, 4000.00, 200, 200, 1/23/2019 12:00:00 AM, 1/31/2019 12:00:00 AM
+ Event_Name, Event_Description, ArtistName, About, VenueCity, VenueCountry, VenueName, VenueState, Alternate_Names, BannerImage_URL, CreatedDate, Date_Local, Decade, ImageURL, Main_Genre, ModifiedDate, NoOfUserGoing, Organizer_Description, Organizer_Name, TicketURL, Time_Local
+ sdf, fg, Gipsy Kings, , , , , , Gypsy Kings, https://i.scdn.co/image/49f733cda81b3fd1a4646ca45e3920ff60486607, 8/30/2016 06:38:21 PM, 1/25/2019, 1980s / 1990s / 2000s / 2010s, https://i.scdn.co/image/49f733cda81b3fd1a4646ca45e3920ff60486607, World, 11/27/2018 09:15:37 PM, 0, fgbhfg, sdogra, http://23.111.138.246/TicketEventCheckout.aspx, 12:00 AM

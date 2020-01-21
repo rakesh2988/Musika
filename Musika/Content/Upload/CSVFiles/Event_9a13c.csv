@@ -1,0 +1,10 @@
+"TourID,ArtistID,ArtistName,About,ImageURL,BannerImage_URL,OnTour,Gender,Main_Genre,Decade,Alternate_Names,CreatedDate,ModifiedDate,Date_Local,Time_Local,RecordStatus,IsTracking,Instagram_Tag,IsGoing,NoOfUserGoing,TourPhotos,ArtistRelated,Venue,UsersGoing,TicketURL,Event_Name,Event_Description,Organizer_Name,Organizer_Description,lstTicket
+13462,1390,Shakira,,https://i.scdn.co/image/cd060b66f9e432ce43f6c7b201f75771cd44b332,https://i.scdn.co/image/cd060b66f9e432ce43f6c7b201f75771cd44b332,True,Female,Pop,1990s / 2000s / 2010s,Shakira Mebarak,8/29/2016 09:47:45 AM,1/9/2019 09:40:46 AM,1/25/2019,07:00 AM,MusicGraph,False,Shakira,False,2,,System.Collections.Generic.List`1[Musika.Models.API.View.viewEventRelated],Musika.Models.API.View.ViewEventVenue,System.Collections.Generic.List`1[Musika.Models.API.View.ViewEventUsers],http://23.111.138.246/TicketEventCheckout.aspx,gbfd,fdgdfgfdg,sdogra,dfgdfgdf,System.Collections.Generic.List`1[Musika.Models.Ticket]
+","VenueID,VenueName,ImageURL,Extended_Address,Display_Location,Slug,Postal_Code,Address,Timezone,VenueCity,VenueState,VenueCountry,VenueLat,VenueLong
+2220,Sob'S,,New York, NY 10014,New York, NY,sob-s,10014,New York, NY 10014,America/New_York,New York,NY,US,40.7300000,-74.0100000
+","UserID,UserName,Email,ThumbnailURL,CreatedDate
+7909,Web,rahulnair.eminence@gmail.com,http://23.111.138.246/Content/Upload/ProfileImage/_Thumb_a587e401-3ff5-420f-96d7-e3ab5cffc23a.png,1/24/2019
+8498,Manisha,mishurathore@gmail.com,http://23.111.138.246/Content/Upload/ProfileImage/_Thumb_bf3f81fa-12db-4b87-bee5-ea80dcee73c8.png,1/24/2019
+","EventId,Currency,CountryId,RefundPolicy,lstTicketData
+3,MXN,55,,System.Collections.Generic.List`1[Musika.Models.TicketData]
+"

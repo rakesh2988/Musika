@@ -1,0 +1,216 @@
+/*font ends*/
+
+
+/* You can add global styles to this file, and also import other style files */
+footer {
+  z-index: 999;
+  position: relative;
+  width: 100%;
+  float: left;
+}
+
+.event_listing_page {
+  min-height: 500px;
+  float: left;
+  width: 100%;
+}
+
+.col-sm-9.body-content.event_listing_page {
+  position: relative;
+  min-height: 400px;
+}
+
+.col-sm-9 {
+  top: 80px;
+  padding-bottom: 90px;
+}
+
+.cover_login_register {
+  box-shadow: 0px 0px 10px #ccc;
+  top: 54px;
+  margin-left: 25% !important;
+  margin-bottom: 100px;
+}
+
+.cover_login_register_register {
+  top: 110px;
+  margin-bottom: 130px;
+}
+
+.login_page input {
+  background-color: #1ad0e7 !important;
+  border-color: #1ad0e7 !important;
+}
+
+.cover_login_register .form-group input {
+  background-color: #f2f2f2;
+  border: none;
+}
+
+.table-responsive {
+  width: 100%;
+  margin-bottom: 15px;
+  overflow-y: hidden;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  border: 1px solid #ddd;
+}
+
+.staff_creation {
+  padding: 15px;
+  box-shadow: 0px 0px 13px rgba(0, 0, 0, 0.3);
+  margin-bottom: 50px;
+}
+
+.staff_creation_left {
+  margin-left: 16%;
+}
+
+  .staff_creation_left .form-group input {
+    background-color: #f2f2f2;
+    border: none;
+    height: 40px;
+    box-shadow: none;
+  }
+
+.staff_creation .btn.btn-primary {
+  background-color: #00c2da !important;
+  width: 100px;
+  text-transform: uppercase;
+}
+
+
+
+@media screen and (max-width: 991px) {
+  .navbar-default .navbar-collapse .nav.navbar-nav.navbar-right li a {
+    padding: 20px 6px 15px 6px !important;
+  }
+
+  .event_listing_page h2 {
+    float: left;
+    width: 100%;
+  }
+
+  .listing_page .table td a {
+    padding: 0px 0px;
+  }
+}
+
+.form-group.login_page, .form-group.register_page {
+  width: auto;
+  float: left;
+  margin-top: 11px;
+}
+
+  .form-group.register_page a {
+    color: #fff;
+    background-color: #1ad0e7;
+    border-color: #1ad0e7;
+    margin-left: 20px;
+    border-radius: 4px;
+    padding: 5px 13px;
+  }
+
+    .form-group.register_page a:hover {
+      color: #fff;
+      background-color: rgb(38, 174, 180);
+      border-color: rgb(38, 174, 180);
+      text-decoration: none;
+    }
+
+.cover_login_register h2 {
+  border-bottom: 2px solid #1ad0e7;
+  padding-bottom: 7px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+
+
+
+
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  margin: auto;
+  padding: 15px;
+  border: 0px !important;
+  width: 45%;
+  top: 35%;
+  height: 20%;
+  text-align: justify;
+  color: #fff;
+}
+
+/* The Close Button */
+.close {
+  color: #fff !important;
+  float: right;
+  font-size: 16px !important;
+  font-weight: bold;
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  padding: 1px 5px !important;
+  border: 2px solid #fff !important;
+  border-radius: 50px;
+}
+
+.modal-content p {
+  width: 100%;
+  float: left;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0px !important;
+  margin-top: 10px !important;
+}
+
+.close:hover,
+.close:focus {
+  color: #fff !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .col-sm-9 {
+    top: 0px !important;
+  }
+
+  .listing_page {
+    width: 100% !important;
+    margin-bottom: 0px;
+  }
+
+  .table-responsive2 {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+  }
+}
+
+
+ul.nav.navbar-nav {
+  margin: 0px;
+  padding: 0px 0px;
+}
+.newsletter-text h2 {
+  float: left;
+  margin-top: 7px !important;
+}

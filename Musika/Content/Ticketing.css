@@ -1,0 +1,810 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+section.billing--section {
+    font-family: 'Montserrat', sans-serif;
+}
+div span#lblpayment {
+    background-color: transparent !important;
+    color: #555;
+    font-weight: bold;
+}
+div#creditDiv1 {
+    float: left;
+    width: 100%;
+}
+label.slct_pymnt {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 8px !important;
+    color: #555 !important; 
+    font-weight: bold !important;
+    font-size: 14px !important;
+}
+
+div#navigation {
+    padding: 0 0px;
+    margin-bottom: 25px !important;
+}
+
+#navigation span.bmd-form-group {
+    margin: 0;
+    /*box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3);*/
+    border-radius: 3px;
+    border-bottom: 1px solid #ddd;
+    float: left;
+    width: 100%;
+    position: relative;
+    top: 0px !important;
+    padding: 0;
+    /*background: transparent;*/
+}
+
+    #navigation span.bmd-form-group select {
+        padding: 12px 10px;
+        height: auto;
+        color: #fff;
+    }
+
+    #navigation span.bmd-form-group:before {
+        content: "\f107";
+        position: absolute;
+        right: 10px;
+        color: #fff;
+        font-size: 22px;
+        font-family: FontAwesome;
+        top: 2px;
+    }
+
+    #navigation span.bmd-form-group select option {
+        color: #555;
+    }
+
+
+
+/*clear css*/
+
+
+
+.form-clear {
+    align-items: center;
+    border-radius: 50%;
+    bottom: 0px;
+    color: rgb(243, 22, 22);
+    cursor: pointer;
+    display: flex !important;
+    position: absolute;
+    right: 14px;
+    z-index: 10;
+}
+
+.form-text + .form-clear {
+    bottom: calc(1rem + 18px);
+}
+
+.form-clear .material-icons {
+    font-size: 14px;
+    font-weight: 500;
+    left: initial !important;
+    right: 0px !important;
+    padding: 10px;
+    color:red;
+}
+
+
+
+
+/*clear css*/
+
+
+
+span.crossSign i { 
+    transform: rotate(45deg);
+    font-size: 12px;
+    color:red;
+} 
+span.crossSign {
+    margin-bottom: 0;
+}
+.form_cover_main {
+    width: 100%;
+    max-width: 1170px;
+    margin: 30px auto;
+    display: table;
+    padding: 10px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.biling-cover {
+    width: 100%;
+    float: left;
+    padding: 0px 15px;
+    box-sizing: border-box;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    position: relative;
+    text-align: center;
+}
+
+.biling-saprate {
+    width: 50%;
+    float: none;
+    display: inline-block;
+}
+
+
+.biling-cover:last-child::after {
+    content: none;
+}
+
+.form_cover_main h2 {
+    float: left;
+    margin: 15px 0px 15px 0px;
+    margin-bottom: 15px;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #ccc;
+}
+
+.form_cover_main span {
+    width: auto;
+    float: none;
+    margin-bottom: 8px;
+    display: inline-block;
+    font-size: 16px;
+    top: 16px !important;
+}
+
+.biling-saprate span {
+    width: 100%;
+}
+
+.form_cover_main span label {
+    width: 120px;
+    float: left;
+    line-height: 40px;
+    font-family: roboto;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-align: left;
+}
+
+.form_cover_main span input {
+    max-width: 320px;
+    float: left;
+    line-height: 40px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #EAEAEA;
+    border: none;
+    border-radius: 4px;
+}
+
+.epiry-dates {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+    .epiry-dates span select {
+        height: 40px;
+        float: left;
+        max-width: 320px;
+        border: 1px solid #ccc;
+        width: 100%;
+    }
+
+.cvv-code input {
+    width: 100px !important;
+}
+
+.cvv-code i {
+    font-size: 22px;
+    margin: 7px 0px 0px 20px;
+    color: #333;
+}
+
+.biling-cover img {
+    width: 190px;
+    float: left;
+}
+
+.modal-content {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.card-cover {
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.make_payment_btn {
+    display: inline-block;
+}
+
+.billing_card-info, .billing-address_info {
+    padding: 0px 0px;
+}
+
+.bmd-form-group.is-filled .bmd-label-floating, .is-focused span:not(.form-clear), .bmd-form-group.is-filled label {
+    top: 7px !important;
+    font-size: 12px !important;
+    left: 10px !important;
+    color: rgba(0, 0, 0, 0.39);
+}
+
+body .is-filled.is-focused .material-icons {
+    top: inherit !important;
+    font-size: inherit !important;
+    left: inherit !important;
+}
+
+body .is-focused span.form-clear, body .is-filled span.form-clear, body .is-filled span.form-clear {
+    color: red !important
+}
+
+.is-focused span .form-control {
+    border: 0px !important;
+    padding: 10px 0px;
+}
+
+input:focus + .form-clear .material-icons {
+    color: red !important
+}
+
+.bmd-form-group p.country_label {
+    margin: 0px;
+    line-height: 8px;
+    position: relative;
+    top: -8px;
+}
+
+.paypalsection .make_payment_btn input {
+    border-radius: 81px !important;
+    background: #428bca !important;
+    color: #fff !important;
+    font-size: 18px;
+    padding: 3px 32px !important;
+    width: 100%;
+}
+
+div#navigation h3 {
+    width: 100%;
+    display: inline-block;
+    margin-top: 26px;
+}
+
+.biling-saprate.paypalsection {
+    width: 100%;
+    float: left;
+    box-shadow: none !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+
+
+
+@media screen and (max-width: 1199px) {
+    .form_cover_main {
+        max-width: 100%;
+        box-shadow: none;
+    }
+
+    .form_cover_main {
+        margin: 0px auto;
+    }
+
+    .biling-cover::after {
+        right: 0%;
+    }
+
+    .form_cover_main span label {
+        width: 101px;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+    div#MyPopup .payment_popup .modal-content .justify-content-between {
+        padding: 10px;
+    }
+    div#MyPopup .payment_popup .modal-content {
+        overflow: hidden;
+    }
+    div#MyPopup .payment_popup .modal-content .modal-footer {
+        bottom: 0;
+        position: absolute;
+        width: 100%;
+        margin-top: 0;
+        background: #fff;
+    }
+    .form_cover_main span input {
+        max-width: 100%;
+    }
+
+    .form_cover_main span label {
+        line-height: 25px;
+    }
+
+    .biling-cover::after {
+        content: none;
+    }
+
+    .epiry-dates span select {
+        width: 100%;
+    }
+
+    .epiry-dates {
+        width: 48%;
+        margin-right: 2%;
+    }
+
+    .form_cover_main span label {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .biling-cover {
+        width: 100%;
+        float: none;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .make_payment_btn {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: table;
+        padding: 0px 15px;
+    }
+
+    .biling-saprate {
+        width: 100%;
+        float: left;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+        padding: 15px;
+        box-sizing: border-box;
+        margin-bottom: 30px;
+    }
+
+    .nav-pills {
+        float: left;
+        width: 100%;
+        margin-bottom: 20px !important;
+    }
+
+    div#navigation span {
+        width: 100% !important;
+        float: left !important;
+        margin: 7px 0px !important;
+        padding: 0px 3px 0px 0px !important;
+        position: relative !important;
+    }
+
+    div#navigation input {
+        width: 100% !important;
+        float: right !important;
+        margin-right: 0px !important;
+    }
+
+    div#navigation span i {
+        position: absolute !important;
+        top: 14px !important;
+        margin-left: -90px !important;
+    }
+}
+
+
+
+.make_payment_btn button {
+    border-radius: 0;
+    text-transform: uppercase;
+    height: 40px;
+    background: rgb(38, 174, 150);
+    color: #fff;
+    border-color: rgb(38, 174, 150);
+    padding: 0px 18px;
+    border: none;
+}
+
+.biling-saprate span input#btnSubmit {
+    color: #fff !important;
+    max-width: 100%;
+    width: 100% !important;
+    text-transform: uppercase;
+    padding: 0px 26px !important;
+    background: #428bca !important;
+    font-size: 18px;
+    border-radius: 50px !important;
+}
+
+.make_payment_btn .btnpayment {
+    border-radius: 0;
+    text-transform: uppercase;
+    height: 40px !important;
+    background: rgb(38, 174, 150);
+    color: #fff;
+    border-color: rgb(38, 174, 150);
+    padding: 0px 18px !important;
+    border: none;
+}
+
+.billing--section select {
+    background: transparent;
+}
+
+.bmd-form-group .select__wrapper .validation {
+    top: 20px !important;
+    left: 0 !important;
+}
+/* .modal-footer{
+position:inherit !important;
+z-index:99999 !important;
+} */
+
+/*.modal-open .modal {
+	-webkit-overflow-scrolling: touch;
+}*/
+.modal-body.justify-content-between {
+    height: 400px;
+    overflow: scroll;
+}
+
+.modal-dialog-centered.payment_popup {
+    display: -webkit-flex;
+}
+
+.modal-dialog.payment_popup {
+    width: 80%;
+}
+
+.ticketing_width {
+    width: 1100px;
+}
+/*--------------30-nov ------------*/
+.modal {
+    top: 5% !important;
+    right: 5% !important;
+    bottom: 5% !important;
+    left: 5% !important;
+    border-radius: 6px !important;
+}
+
+.modal-body.justify-content-between p {
+    text-align: justify !important;
+    margin-bottom: 55px !important;
+    font-size: 14px;
+}
+
+input#btnAcceptCard {
+    color: #fff;
+    background-color: #000;
+    border-color: #000;
+    width: auto;
+    padding: 7px 10px;
+}
+
+.biling-saprate span:last-child {
+    width: 100%;
+    text-align: center;
+}
+/*.biling-cover .biling-saprate span:last-child input {
+    background-color: #000 !important;
+    color: #C1F5FF !important;
+    line-height: 35px;
+    border-radius: 4px !important;
+    float:none !important;
+    display:inline-block !important;
+}*/
+.paymentbtn .btncss {
+    /*background-color: #000 !important;
+    color: #C1F5FF !important;
+    line-height: 35px;
+    border-radius: 4px !important;
+    float: none !important;
+    display: inline-block !important;*/
+    border-radius: 81px !important;
+    background: #428bca !important;
+    color: #fff !important;
+    font-size: 18px;
+    padding: 3px 32px !important;
+    width: 100%;
+}
+
+.tab-pane .btnpayment {
+    border-radius: 81px !important;
+    background: #428bca !important;
+    color: #fff !important;
+    font-size: 18px;
+    padding: 3px 32px !important;
+    width: 100%;
+    float: left;
+}
+
+.form-group-row input:focus, .form-group-row select:focus {
+    box-shadow: none !important;
+}
+
+.billing-address_info h2 {
+    float: left;
+    width: 100%;
+}
+
+button.close {
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    font-size: 20px;
+}
+
+h4.modal-title {
+    font-size: 18px;
+}
+
+.modal-header {
+    min-height: 16.428571429px !important;
+    padding: 20px !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+}
+
+.creditcardsubmit .paymentbtn {
+    width: 100%;
+}
+
+    .creditcardsubmit .paymentbtn input {
+        float: none;
+    }
+
+
+
+
+
+@media(max-width:800px) {
+    .biling-saprate {
+        width: 100%;
+        float: left;
+        display: inline-block;
+    }
+
+    .epiry-dates {
+        width: 100%;
+        margin-right: 0;
+    }
+
+        .epiry-dates span select {
+            width: 100%;
+            min-width: 100%;
+        }
+
+    .cover_ticketing {
+        margin-bottom: 10px !important;
+        padding-bottom: 20px;
+    }
+
+    #exTab3 .nav-pills > li > a {
+        border-radius: 81px !important;
+    }
+
+    #exTab3 .nav-pills > li > a {
+        border-radius: 81px !important;
+        font-weight: bold;
+    }
+
+    #btnPayment {
+        background: #428bca !important;
+        color: #fff !important;
+        font-weight: bold;
+        border-radius: 100px !important;
+        padding: 3px 32px !important;
+    }
+
+    .biling-cover {
+        margin-bottom: 0px;
+    }
+
+    #navigation {
+        padding: 0 15px;
+    }
+}
+
+.biling-cover #navigation .active, .biling-cover #navigation .active input {
+    background-color: #025199 !important;
+}
+/*New changes form*/
+
+.billing_wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.39);*/
+}
+
+.billing-address_info {
+    margin-top: 0px;
+}
+
+.billing_wrapper .form-group img {
+    max-width: 160px;
+}
+
+.billing--section {
+    margin-top: 25px;
+}
+
+.billing_wrapper .form-group {
+    box-shadow: inset 0px 1px 5px rgba(0,0,0,0.3);
+    padding: 25px 10px 15px 10px;
+    border-radius: 3px;
+    border-bottom: 1px solid #ddd;
+    float: left;
+    width: 100%;
+    position: relative;
+    top: 0px !important;
+}
+
+.bmd-form-group input:focus, .bmd-form-group select:focus {
+    outline: 0px !important;
+}
+
+.select__wrapper::before {
+    content: "\f107";
+    position: absolute;
+    right: 10px;
+    color: #555;
+    font-size: 22px;
+    font-family: FontAwesome;
+    top: -8px;
+}
+
+.billing_card-info .select__wrapper select {
+    background-image: none !important;
+}
+
+.billing-address_info .form-group-row .row__half.is-filled .select__wrapper:before {
+    top: 7px;
+}
+
+.billing_wrapper input {
+    background: transparent;
+}
+
+.card_-number {
+    /*background-image: url('img/visa.png');*/
+    background-repeat: no-repeat;
+    background-position: 98% center;
+    background-size: 30px;
+}
+
+.select__wrapper {
+    position: relative;
+}
+
+.billing_wrapper label {
+    color: #888;
+    font-size: 13px;
+    font-weight: normal;
+    margin-bottom: 0;
+}
+
+.billing_wrapper select, .billing_wrapper input {
+    padding: 0;
+    border: 0;
+    box-shadow: none !important;
+    appearance: none !important;
+    -webkit-appearance: none;
+    font-size: 14px;
+    color: #000;
+    font-weight: 500;
+    height: auto;
+    width: 100%;
+}
+
+    .billing_wrapper select option {
+        padding-left: 0;
+    }
+
+.billing_wrapper select {
+}
+
+.billing_wrapper input::placeholder {
+    color: #000;
+    opacity: 1;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.billing_wrapper .form-group-row {
+    width: 100%;
+    display: inline-block;
+}
+
+    .billing_wrapper .form-group-row .row__half {
+        width: 48%;
+        float: left;
+        line-height: 15px;
+    }
+
+        .billing_wrapper .form-group-row .row__half:nth-child(2n) {
+            margin-left: 4%;
+        }
+
+.billing-address_info h2 {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+.CSC_row {
+    background-image: url(img/credit-card.png);
+    background-repeat: no-repeat;
+    background-position: 84% center;
+    background-size: 30px;
+}
+
+body .bmd-form-group .validation {
+    position: absolute;
+    top: 41px !important;
+    color: red !important;
+    font-size: 12px;
+    left: 9px;
+    width: 100%;
+}
+
+.form-control:focus {
+    background-image: none !important;
+}
+
+.bmd-form-group .select__wrapper select.form-control {
+    background: none !important;
+    height: 17px !important;
+}
+.is-focused [class*=" bmd-label"], .is-focused [class^=bmd-label] {
+    color: rgba(0, 0, 0, 0.39) !important;
+    font-size: 12px !important;
+    left: 11px !important;
+}
+/*--------09-may-2019----*/
+img#myImage {
+    position: absolute;
+    right: 44px;
+    top: 14px;
+    width: 43px;
+}
+
+@media (max-width:767px) {
+    .billing_wrapper {
+        max-width: 100%;
+        padding: 0 20px 20px 20px;
+    }
+}
+
+@media (max-width:480px) {
+    .billing_wrapper .form-group-row .row__half {
+        width: 100%;
+    }
+
+        .billing_wrapper .form-group-row .row__half:nth-child(2n) {
+            margin-left: 0px;
+        }
+}
+
+.custom-file-control, .form-control, .is-focused .custom-file-control, .is-focused .form-control {
+    background-image: none !important;
+}

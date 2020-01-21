@@ -1,0 +1,15 @@
+.event_listing_page {
+  margin-top: 60px;
+}
+  /*.event_listing_page :host /deep/ p a {
+    width: auto;
+    float: left;
+    padding: 9px 20px;
+    background-color: rgb(38, 174, 150);
+    color: #fff;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+  .event_listing_page :host /deep/ p {
+    margin: 0px;
+  }*/ 

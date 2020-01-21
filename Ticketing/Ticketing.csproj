@@ -1,0 +1,116 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="bootstrap" Version="4.1.3" />
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
+    <PackageReference Include="Microsoft.AspNet.WebApi" Version="5.2.6" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.6" />
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\src\app\NewFolder1\**" />
+    <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\src\app\NewFolder1\**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Remove="ClientApp\src\app\NewFolder1\**" />
+    <None Remove="ClientApp\src\app\NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\app\about\about.component.ts" />
+    <None Remove="ClientApp\src\app\app.routes.ts" />
+    <None Remove="ClientApp\src\app\EventAdmin\dashboard\dashboard.module.ts" />
+    <None Remove="ClientApp\src\app\EventAdmin\staff\eventstafflisting\eventstafflisting.component.ts" />
+    <None Remove="ClientApp\src\app\EventAdmin\staff\staffdetail\staffdetail.component.ts" />
+    <None Remove="ClientApp\src\app\login\login.component.spec.ts" />
+    <None Remove="ClientApp\src\app\login\login.component.spec.ts" />
+    <None Remove="ClientApp\src\app\models\usermodel.ts" />
+    <None Remove="ClientApp\src\app\nav-menu\nav-menu.service.ts" />
+    <None Remove="ClientApp\src\app\service\authentication.service.ts" />
+    <None Remove="ClientApp\src\app\service\filter.ts" />
+    <None Remove="ClientApp\src\app\service\service.ts" />
+    <None Remove="ClientApp\src\app\shared\breadcrumb\breadcrumb.component.ts" />
+    <None Remove="ClientApp\src\app\_layout\admin-layout\admin-layout.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Musika.Library\Musika.Library.csproj" />
+    <ProjectReference Include="..\Musika.Models\Musika.Models.csproj" />
+    <ProjectReference Include="..\Musika.Repository\Musika.Repository.csproj" />
+    <ProjectReference Include="..\Musika\Musika.csproj" />
+  </ItemGroup>
+
+  <!--<ItemGroup>
+    <Reference Include="System.Web">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+  </ItemGroup>-->
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\app\about\about.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\app.routes.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\EventAdmin\dashboard\dashboard.module.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\EventAdmin\staff\eventstafflisting\eventstafflisting.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\EventAdmin\staff\staffdetail\staffdetail.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\header\nav-menu.service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\models\usermodel.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\filter.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\service\service.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\shared\breadcrumb\breadcrumb.component.ts" />
+    <TypeScriptCompile Include="ClientApp\src\app\_layout\admin-layout\admin-layout.component.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\app\_layout\user-layout\" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

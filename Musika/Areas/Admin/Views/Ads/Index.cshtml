@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "Banners";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>Banners</h2>
+
+<div class="panel panel-inverse" style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);">
+    <div class="panel-heading"></div>
+    <div class="panel-body no-padding">
+
+        <div class="modal fade" id="myGlobalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="modal-wrapper">
+                            <div class="modal-icon text-center" style="font-size:70px;">
+                                <i class="fa fa-question-circle"></i>
+                            </div>
+                            <div class="modal-text text-center">
+                                <h4>Are you sure?</h4>
+                                <p id="txtGlobal"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-danger" id="btnGlobalConfirm">Confirm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="modalShowBannerImage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document" style="width:800px;">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="modal-wrapper">
+                            <div class="modal-text text-center">
+                                <img id="imgBannerImage" style="width:700px;" alt="" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="form-horizontal padding20" id="form-add-ads">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">
+                    Banner Image:
+                </label>
+                <div class="col-sm-4">
+                    <input type="file" id="fileImage" class="validate[required]" style="max-width:100%" data-element="file">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">
+                    Country:
+                </label>
+                <div class="col-sm-4">
+                    @*<select id="ddlCities" class="form-control validate[required]"></select>*@
+                    <div class="input-group date">
+                        <input type="hidden" data-element="AdId" value="0" name="AdId" />
+                        <input type="hidden" data-element="CityID" value="0" name="CityID" />
+                        <input type="text" class="form-control" name="CityName" data-element="CityName" />
+                        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">
+                    Banner URL:
+                </label>
+                <div class="col-sm-4">
+                    <input id="txtLinkURL" class="form-control validate[required]" placeholder="Link URL" type="text" data-element="link">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-2 control-label">
+                    Status:
+                </label>
+                <div class="col-sm-4">
+                    <select class="form-control validate[required]" data-element="Recordstatus" style="padding-right:1px;padding-left:1px">
+                           <option value="Active">Active</option>
+                           <option value="InActive">InActive</option>
+                       </select>
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-6">
+                    <input type="submit" class="btn btn-inverse pull-right" value="Save" id="btnSave" onclick="return false;" />
+                </div>
+            </div>
+        </form>
+
+        <table class="table table-striped table-bordered table-hover datatables-example datatable dtr-inline">
+            <thead>
+                <tr>
+                    <th style="cursor: pointer;" width="150px">
+                        Banner Image
+                    </th>
+                    <th style="cursor: pointer;" width="500px">
+                        Banner URL
+                    </th>
+                    <th style="cursor: pointer;" width="200px">
+                        Country
+                    </th>
+                    <th style="cursor: pointer;" width="100px">
+                        Status
+                    </th>
+                    <th style="min-width:100px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyAds"></tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script src="~/Areas/Admin/Content/scripts/ads-jquery.js"></script>
+}
+
+
+
+

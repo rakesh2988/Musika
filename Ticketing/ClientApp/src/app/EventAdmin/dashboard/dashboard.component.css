@@ -1,0 +1,12 @@
+body {
+}
+.monthly_expence_cover .monthly_expence_firs {
+  float: none;
+  margin: 0px !important;
+  margin-bottom: 60px !important;
+}
+.monthly_expence_cover {
+  width: 100%;
+  float: left;
+  text-align: center;
+}

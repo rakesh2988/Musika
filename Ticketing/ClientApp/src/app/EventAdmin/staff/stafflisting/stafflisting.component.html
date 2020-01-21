@@ -1,0 +1,46 @@
+<!--<h1>Login Page</h1>-->
+<ngx-spinner></ngx-spinner>
+<p>
+  <a [routerLink]="['/staffcreation']">Add Staff</a>
+</p>
+<div *ngIf="eventList" style="align-content:center;">
+
+  <!--<div class="col-md-6 col-md-offset-3">-->
+  <div class="listing_page">
+    <h2>Staff Listing</h2>
+    <p class={{msgcss}} *ngIf="IsMessage"><b>{{ responseMessage }} </b> </p>
+    <div class="table-responsive2">
+      <div class="cover_search">
+        <input type="text" class="form-control" name="searchString" placeholder="Search UserName...." [(ngModel)]="searchString">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>UserName</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Phone Number</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let temp of eventList | filter : 'UserName' : searchString | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{ temp.UserName }}</td>
+            <td>{{ temp.Email }}</td>
+            <td>{{ temp.Country }} </td>
+            <td>{{temp.PhoneNumber}}</td>
+            <td>
+              <a [routerLink]="['/staff/edit/', temp.UserId]" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+              <a [routerLink]="" (click)="delete(temp.UserId)" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagnation_cover">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

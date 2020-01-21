@@ -1,0 +1,96 @@
+<!--<h1>Login Page</h1>-->
+<link href="../../assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="../../assets/css/style.css" rel="stylesheet">
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Oswald:200,300,400,500,600,700" rel="stylesheet">
+
+<header>
+  <div class="top_header hidden-sm hidden-md hidden-lg">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          
+          <div *ngIf="!nav.isAuthenticate" class="login_signup">
+            <div class="signup-outer">
+              <a href="/register" class="signup">Register</a>
+            </div>
+            <div class="login-outer">
+              <a href="/login" class="login">Login</a>
+
+            </div>
+          </div>
+          <div *ngIf="nav.isAuthenticate" class="login-outer">
+            <a class="logout" (click)="logout()">Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-header">
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <div class="col-lg-2 col-md-2 col-sm-2 text-center">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                  <img src="../../assets/logo.png" alt="logo" />
+                </a>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6">
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#/eventlisting">Events</a></li>
+                  <li><a target="_blank" href="https://www.instagram.com/musikaapprd/">Instagram</a></li>
+                  <li><a href="#/contact">Contact</a></li>
+
+                </ul>
+              </div><!-- /.navbar-collapse -->
+            </div>
+          
+            <div class="col-lg-4 col-md-4 col-sm-4 hidden-xs">
+              <div *ngIf="!nav.isAuthenticate" class="login_signup">
+                <div class="signup-outer">
+                  <a [routerLink]="['/register']" class="signup">Register</a>
+
+                </div>
+                <div class="login-outer">
+                  <a [routerLink]="['/login']" class="login">Login</a>
+                </div>
+              </div>
+              <div class="dropdown" *ngIf="nav.isAuthenticate">
+                <!--<button class="dropdown-toggle" type="button" data-toggle="dropdown">-->
+                  <span class="dropdown-toggle" type="button" data-toggle="dropdown"><i class="fa fa-user fa-2x"></i></span>
+                <!--</button>-->
+                  <ul class='dropdown-menu profilemenu'>
+                    
+                    <li> <a href="#/eventlisting"><span class='glyphicon glyphicon-home'></span>Home </a></li>
+                    <li><a (click)="logout()"><span class="glyphicon glyphicon-log-out"></span>Logout</a></li>
+                  </ul>
+              </div>
+
+              <!--<div *ngIf="nav.isAuthenticate" class="logout-outer ">
+    <a class="logout" (click)="logout()">Logout</a>
+  </div>-->
+            </div>
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+

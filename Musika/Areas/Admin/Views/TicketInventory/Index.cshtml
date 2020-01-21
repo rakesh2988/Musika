@@ -1,0 +1,372 @@
+﻿@{
+    ViewBag.Title = "Ticketing Inventory";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>Ticketing Inventory</h2>
+<div class="panel panel-inverse" style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);">
+    <div class="panel-heading"></div>
+    <div class="panel-body no-padding">
+
+        <div class="modal fade in" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Edit/View Ticket</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <form class="form-horizontal" id="form-Event">
+                                    <input type="hidden" data-element="EventId" value="0" name="EventId" />
+                                    <input type="hidden" value="" data-element="TicketId" name="TicketId" />
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Total Seats:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control validate[required]" data-element="TotalSeats" name="TotalSeats">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Events:</label>
+                                        <div class="col-md-4">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control validate[required]" name="TourDate" data-element="TourDate" />
+                                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                            </div>
+                                        </div>
+                                        @*<div class="col-md-4">
+                                                <select class="form-control validate[required]" data-element="TourDate" name="TourDate" onchange="GetEventDetails(this)">
+                                                    <option value="">Select Event</option>
+                                                    @foreach (var item in ViewBag.TourDate)
+                                                    {
+                                                        <option value="@item.TourDateID">@item.ArtistName - @item.VenueName</option>
+                                                    }
+                                                </select>
+                                            </div>*@
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">From Seat No:</label>
+                                        <div class="col-md-4">
+                                            <input type="number" class="form-control" data-element="FromSeat" name="FromSeat">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">To Seat No:</label>
+                                        <div class="col-md-4">
+                                            <input type="number" class="form-control" data-element="ToSeat" name="ToSeat">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Section:</label>
+                                        <div class="col-md-4">
+                                            <select class="form-control" data-element="Section" name="Section">
+                                                <option value="">Select Section</option>
+                                                @foreach (var item in ViewBag.Section)
+                                                {
+                                                    <option value="@item.CategoryId" data-price="@item.CategoryPrice">@item.CategoryName</option>
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right"></label>
+                                        <div class="col-md-4">
+                                            <input type="button" class="btn btn-primary" onclick="AddTicketDetails()" value="Add Ticket">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right"></label>
+                                        <div class="col-md-10">
+                                            <table class="table table-condensed tab-content tab-pane table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Seat From</th>
+                                                        <th>Seat To</th>
+                                                        <th>Section</th>
+                                                        <th>Price</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tblbody"></tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <form class="form-horizontal" id="eventdetails" style="display:none">
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Event Name:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_EventName" name="txt_EventName">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">SeatGeek ID:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_SeatGeek_TourID" name="txt_SeatGeek_TourID">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Artist Name:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_ArtistName" name="txt_ArtistName">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Local Date/Time:</label>
+                                        <div class="col-md-4">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" id="datetimepicker1" data-element="txt_Datetime_Local" name="txt_Datetime_Local">
+                                                <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Venue Name:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_ArtistName" name="txt_ArtistName">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue ID:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_SeatGeek_VenuID" name="txt_SeatGeek_VenuID">
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Venue Address 1:</label>
+                                        <div class="col-md-4">
+                                            <textarea class="form-control" data-element="txt_Address" name="txt_Address"></textarea>
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue Address 2:</label>
+                                        <div class="col-md-4">
+                                            <textarea class="form-control" data-element="txt_Extended_Address" name="txt_Extended_Address"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Venue Country:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueCountry" name="txt_VenueCountry">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue City:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueCity" name="txt_VenueCity">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Venue State:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueState" name="txt_VenueState">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue Postal:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_Postal_Code" name="txt_Postal_Code">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Venue Lat:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueLat" name="txt_VenueLat">
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Venue Long:</label>
+                                        <div class="col-md-4">
+                                            <input type="text" class="form-control" data-element="txt_VenueLong" name="txt_VenueLong">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label class="col-md-2 text-right">Venue Timezone:</label>
+                                        <div class="col-md-4">
+                                            <div class="input-group date">
+                                                <input type="text" class="form-control" data-element="txt_VenueTimezone" name="txt_VenueTimezone">
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <div class="col-md-2" id="imgProfile"><div class="sliderimg" style="position:relative; float:left; margin-right:15px; margin-top:0px;"><img src="null" style="width:124px; height:124px;"><img src="23.111.138.246/Areas/Admin/Content/img/cross.png" data-venueid="2585" class="deletephoto" style="position:absolute; top:-5px; right:-5px; width:24px; display:none; cursor:pointer;"></div></div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-md-2">
+                                                    <input type="file" id="input-image" name="userfile" accept="image/*">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">Ticket Url:</label>
+                                        <div class="col-md-4">
+                                            <textarea class="form-control" data-element="txt_TicketURL" name="txt_TicketURL"></textarea>
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Hash Tag:</label>
+                                        <div class="col-md-4">
+                                            <input class="form-control" data-element="txt_HashTag" name="txt_HashTag">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
+
+                                        <label class="col-md-2 text-right">In App Ticketing:</label>
+                                        <div class="col-md-4">
+                                            <div class="checkbox i-checks">
+                                                <label>
+                                                    <div class="icheckbox_square-green" style="position: relative;"><input type="checkbox" data-element="txt_InAppTicketing" name="txt_InAppTicketing" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+                                                </label>
+                                            </div>
+
+                                        </div>
+
+                                        <label class="col-md-2 text-right">Total Seats:</label>
+                                        <div class="col-md-4">
+                                            <input type="number" class="form-control" data-element="txt_TotalSeats" name="txt_TotalSeats">
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div id="slider"></div>
+                        <div style="clear:both;"></div>
+                    </div>
+                    <input type="hidden" id="hfDeleted">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="button" class="btn btn-primary" id="btnSaveChanges" value="Save changes">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="form-horizontal padding20" id="form-search-users">
+            <div class="form-group">
+                <label class="col-md-1 text-right">Event Name:</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" data-element="Src_EventName" />
+                </div>
+
+                <label class="col-md-1 text-right">Artist Name:</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" data-element="Src_ArtistName" />
+                </div>
+                <label class="col-md-1 text-right">Genre Name:</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" data-element="Src_GenreName" />
+                </div>
+                <div class="col-sm-offset-1 col-md-3">
+                    <input type='button' class='btn btn-info btn-inverse' value="Add" onclick='Add()' />
+                    <input type="submit" class="btn btn-inverse" value="Search" id="btnSearch" onclick="return false;" />
+                </div>
+            </div>
+        </form>
+
+
+
+        <input type="hidden" id="hfSortOrder" value="ASC" />
+        <input type="hidden" id="hfSortColumn" value="TicketId" />
+        <input type="hidden" id="hfCurrntPageIndex" />
+        <input type="hidden" id="hfTotalCount" />
+
+        <table class="table table-striped table-bordered table-hover datatables-example datatable dtr-inline">
+            <thead>
+                <tr>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        Event Name
+                        <span data-col="EventName" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        Artist Name
+                        <span data-col="ArtistName" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        Genre
+                        <span data-col="Genre" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        InApp Ticketing
+                        <span data-col="InAppTicketing" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        TotalSeats
+                        <span data-col="TotalSeats" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="min-width:250px;">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyUsers"></tbody>
+        </table>
+
+        <div class="row padding10">
+            <div class="col-md-6" id="page">
+
+            </div>
+            <div class="col-md-6">
+                <nav class="pull-right">
+                    <ul class="pagination" style="margin:0;" id="pagination"></ul>
+                </nav>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<input type="hidden" id="hdnid" />
+<div class="modal fade" id="myGlobalModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="modal-wrapper">
+                    <div class="modal-icon text-center" style="font-size:70px;">
+                        <i class="fa fa-question-circle"></i>
+                    </div>
+                    <div class="modal-text text-center">
+                        <h4>Are you sure?</h4>
+                        <p id="txtGlobal"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger" id="btnGlobalConfirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/Areas/Admin/Content/scripts/ticketing-jquery.js"></script>
+}

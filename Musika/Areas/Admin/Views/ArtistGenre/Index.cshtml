@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "User Dashboard";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>Artist Genre</h2>
+
+<div class="panel panel-inverse" style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);">
+    <div class="panel-heading"></div>
+    <div class="panel-body no-padding">
+
+        <input type="hidden" id="hfSortOrder" value="ASC" />
+        <input type="hidden" id="hfSortColumn" value="ArtistName" />
+        <input type="hidden" id="hfCurrntPageIndex" />
+        <input type="hidden" id="hfTotalCount" />
+
+        <form class="form-horizontal padding20" id="form-search-ArtistsGenre">
+            
+            <div class="form-group">
+                <label class="col-md-1 text-right">Artist Name:</label>
+                <div class="col-md-3">
+                    @if (ViewBag.ArtistName!="")
+                    { 
+                     <input type="text" class="form-control" data-element="sArtistName" value='@ViewBag.ArtistName'/>
+                    }
+                    else { 
+                     <input type="text" class="form-control" data-element="sArtistName" />
+                    }
+                </div>
+
+                <label class="col-md-1 text-right">Genre Name:</label>
+                <div class="col-md-3">
+                    <input type="text" class="form-control" data-element="sGenreName" />
+                </div>
+                <div class="col-sm-offset-1 col-md-3">
+                    <input type="submit" class="btn btn-inverse" value="Search" id="btnSearch" onclick="return false;"/>
+                </div>
+            </div>
+        </form>
+
+
+        <table class="table table-striped table-bordered table-hover datatables-example datatable dtr-inline">
+            <thead>
+                <tr>
+
+                    <th style="cursor: pointer;" width="150px">
+                        Artist Image
+                    </th>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="320px">
+                        Artist Name
+                        <span data-col="ArtistName" class="sort">&nbsp;</span>
+                    </th>
+
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="170px">
+                        Genre
+                        <span data-col="Genre_Name" class="sort">&nbsp;</span>
+                    </th>
+
+                    <th style="cursor: pointer;" onclick="SortData(this);" width="130px">
+                        Main Genre
+                        <span data-col="Primary" class="sort">&nbsp;</span>
+                    </th>
+
+                   
+                </tr>
+            </thead>
+            <tbody id="tbodyArtists"></tbody>
+        </table>
+
+        <div class="row padding10">
+            <div class="col-md-6" id="page">
+
+            </div>
+            <div class="col-md-6">
+                <nav class="pull-right">
+                    <ul class="pagination" style="margin:0;" id="pagination"></ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+    @section scripts{
+        <script src="~/Areas/Admin/Content/scripts/ArtistGenre-jquery.js"></script>
+    }

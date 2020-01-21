@@ -1,0 +1,48 @@
+<p>
+  <a [routerLink]="['/eventcreation']">Add Event</a>
+</p>
+<ngx-spinner></ngx-spinner>
+<div *ngIf="eventList" style="align-content:center;">
+  <div class="listing_page">
+    <h2>Event Listing</h2>
+
+    <div class="cover_search">
+      <input type="text" class="form-control" name="searchString" placeholder="Search Event...." [(ngModel)]="searchString">
+      <i class="fa fa-search" aria-hidden="true"></i>
+    </div>
+    <div class="table-responsive2">
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>Event Name</th>
+            <th>Event Start Date</th>
+            <th>Artist Name</th>
+            <th>Ticket (Sold/Total)</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let temp of eventList | filter : 'EventTitle' : searchString | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>{{ temp.EventTitle }}</td>
+            <td>{{ temp.StartDate | date: format }}</td>
+            <td>{{ temp.ArtistName }}</td>
+            <td>
+              {{temp.TicketsSold}}/{{temp.TotalTickets}}
+            </td>
+            <td>
+              <a [routerLink]="['/event/edit/', temp.EventID]" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+              <!--<a [routerLink]="['/event/detail/', temp.EventID]" title="View"><i class="fa fa-eye" aria-hidden="true"></i></a> |-->
+              <a [routerLink]="" (click)="delete(temp.EventID)" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a> |
+              <a [routerLink]="['/ticketAnalytics/', temp.EventID]" title="View Analytics"><i class="fa fa-pie-chart" aria-hidden="true"></i></a> |
+              <a [routerLink]="" (click)="ExportCSV(temp.EventID)" title="Export CSV"><i class="fa fa-download" aria-hidden="true"></i></a>
+
+              <span class="label label-success" *ngIf="temp?.IsApproved">Approved</span>
+              <span class="label label-danger" *ngIf="!temp?.IsApproved">Not Approved</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="pagnation_cover"><pagination-controls responsive="true" (pageChange)="p = $event"></pagination-controls></div>
+    </div>
+  </div>

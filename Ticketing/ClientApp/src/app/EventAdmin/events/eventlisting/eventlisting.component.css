@@ -1,0 +1,167 @@
+
+.table tr.active td {
+  background-color: #eaeaea;
+  color: black;
+}
+
+p a {
+  width: auto;
+  float: left;
+  padding: 9px 20px;
+  background-color: #1ad0e7;
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0px;
+}
+
+.listing_page {
+  width: 94%;
+  float: left;
+}
+
+  .listing_page h2 {
+    border-bottom: 2px solid #1ad0e7;
+    padding-bottom: 7px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  .listing_page .table {
+    width: 100%;
+    float: left;
+    box-shadow: 0px 0px 18px #ccc;
+    margin-top: 15px;
+  }
+
+    .listing_page .table td a {
+      color: #1ad0e7;
+      padding: 0px 2px;
+    }
+
+    .listing_page .table > thead > tr > th {
+      border-right: 1px solid #ddd;
+      letter-spacing: 0.5px;
+      line-height: 35px;
+    }
+
+    .listing_page .table tr td {
+      border-right: 1px solid #ddd;
+      line-height: 25px;
+    }
+
+.label-success, .label-danger {
+  float: right;
+}
+
+.cover_search {
+  float: left;
+  width: 100%;
+  margin: 0px 0px 23px 0px;
+  position: relative;
+}
+
+  .cover_search input {
+    width: 33%;
+    float: right;
+    position: relative;
+    border: none;
+    background-color: #f2f2f2;
+    border-radius: 4px;
+    box-shadow: none;
+  }
+
+  .cover_search i {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 10px;
+    background-color: #f2f2f2;
+    border-radius: 7px;
+  }
+
+.pagnation_cover {
+  width: 100%;
+  float: left;
+}
+
+  .pagnation_cover pagination-controls {
+    width: 100%;
+    float: left;
+    margin: 15px 0px;
+  }
+
+    .pagnation_cover pagination-controls /deep/ pagination-template {
+      padding: 0px !important;
+      float: left;
+      width: 100%;
+    }
+
+      .pagnation_cover pagination-controls /deep/ pagination-template ul {
+        padding: 0px !important;
+        float: right;
+        width: auto;
+      }
+
+        .pagnation_cover pagination-controls /deep/ pagination-template ul li {
+          width: auto;
+          float: left;
+          border: 1px solid #1ad0e7 !important;
+          color: #1ad0e7 !important;
+          margin: 0px 1px;
+        }
+
+          .pagnation_cover pagination-controls /deep/ pagination-template ul li.current {
+            background: #1ad0e7;
+            padding: 9px 15px !important;
+          }
+
+            .pagnation_cover pagination-controls /deep/ pagination-template ul li.current span {
+              color: #fff !important;
+            }
+
+          .pagnation_cover pagination-controls /deep/ pagination-template ul li.disabled > span {
+            padding: 7px 0px !important;
+            display: inline-block;
+          }
+
+          .pagnation_cover pagination-controls /deep/ pagination-template ul li a {
+            padding: 9px 15px !important;
+            color: #1ad0e7;
+          }
+
+          .pagnation_cover pagination-controls /deep/ pagination-template ul li span {
+            color: #1ad0e7;
+          }
+
+          .pagnation_cover pagination-controls /deep/ pagination-template ul li a:hover {
+            background-color: transparent !important;
+            text-decoration: none !important;
+          }
+
+
+@media screen and (max-width: 767px) {
+  .cover_search input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 602px) {
+  .pagnation_cover pagination-controls /deep/ pagination-template ul li.small-screen {
+    display: none !important;
+  }
+  .pagnation_cover pagination-controls /deep/ pagination-template ul li.current {
+    display: block !important;
+  }
+}
+
+
+@media screen and (max-width: 440px) {
+
+  .event_listing_page .col-md-12 {
+    padding: 0px !important;
+  }
+}

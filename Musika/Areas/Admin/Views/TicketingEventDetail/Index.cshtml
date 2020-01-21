@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "Ticketing Events Details";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<div class="row">
+    <h2 class="col-md-6">Ticketing Events Details</h2>@*<a href="#" class="btn btn-success btn-lg">*@
+    @*<span class="glyphicon glyphicon-print"></span> Tickets Sold*@
+    @*</a>*@
+    @if(ViewBag.isapproval != "0")
+    {
+    <input type="button" class="btn btn-primary aprrovebtn" value="Approve Changes" id="btnApprove" />
+    }
+</div>
+<div class="panel panel-inverse" style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);">
+    <div class="panel-heading"></div>
+    <div class="panel-body no-padding">
+        <input type="hidden" id="hfTotalCount" />
+        <form class="form-horizontal" id="form-Event">
+            <div class="form-group">
+                <input type="hidden" data-element="TourDateID" name="TourDateID" value="0" />
+                <input type="hidden" id="eventid" data-element="hdnEventID" value=@ViewBag.eventid />
+                <label class="col-md-2 text-right">Event Name:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" data-element="EventName" name="EventName" disabled="disabled">
+                </div>
+                <label class="col-md-2 text-right">Venue City:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control  validate[maxSize[100]]" data-element="VenueCity" name="VenueCity" disabled="disabled" />
+                </div>
+                @*<label class="col-md-2 text-right">Event Location:</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-element="EventLocation" name="SeatGeek_TourID" disabled="disabled"/>
+            </div>*@
+            </div>
+            <div class="form-group">
+                @*<input type="hidden" data-element="EventID" value="0" name="venueid" disabled="disabled" />*@
+                <label class="col-md-2 text-right">Artist Name</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" data-element="ArtistName" name="ArtistName" disabled="disabled" />
+                </div>
+                <label class="col-md-2 text-right">Venue Name:</label>
+                <div class="col-md-4">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" data-element="VenueName" name="VenueName" disabled="disabled" />
+                        @*<span class="input-group-addon"><i class="fa fa-search"></i></span>*@
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 text-right">Venue Address 1:</label>
+                <div class="col-md-4">
+                    <textarea class="form-control  validate[maxSize[200]]" data-element="Address" name="Address" disabled="disabled"></textarea>
+                </div>
+                <label class="col-md-2 text-right">Venue Address 2:</label>
+                <div class="col-md-4">
+                    <textarea class="form-control  validate[maxSize[200]]" data-element="Extended_Address" name="Extended_Address" disabled="disabled"></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 text-right">Venue State:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control  validate[maxSize[50]]" data-element="VenueState" name="VenueState" disabled="disabled" />
+                </div>
+                <label class="col-md-2 text-right">Venue Postal:</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" data-element="ZipCode" name="ZipCode" disabled="disabled" />
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="hidden" data-element="artistid" value="0" name="artistid" disabled="disabled" />
+                <label class="col-md-2 text-right">Start Date/Time</label>
+                <div class="col-md-4">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" name="StartDateTime" data-element="StartDateTime" disabled="disabled" />
+                        @*<span class="input-group-addon"><i class="fa fa-search"></i></span>*@
+                    </div>
+                </div>
+                <label class="col-md-2 text-right">End Date/Time:</label>
+                <div class="col-md-4">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" id='datetimepicker1' data-element="EndDateTime" name="EndDateTime" disabled="disabled">
+                        @*<span class="input-group-addon"><i class="fa fa-calendar"></i></span>*@
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 text-right">Event Image</label>
+                <div class="col-md-4">
+                    <img src="~/Areas/Admin/Content/img/cross.png" data-src="EventImage" name="EventImage" class="image" height="200" width="325" />
+                </div>
+                <label class="col-md-2 text-right">Event Description</label>
+                <div class="col-md-4">
+
+                    <p data-element="EventDescription" name="EventDescription" disabled="disabled" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 text-right">Organizer Name</label>
+                <div class="col-md-4">
+                    <input type="text" class="form-control" data-element="OrganizerName" name="OrganizerName" disabled="disabled" />
+                </div>
+                <label class="col-md-2 text-right">Organizer Description</label>
+                <div class="col-md-4">
+                    <p data-element="OrganizerDescription" name="OrganizerDescription" disabled="disabled" />
+
+</div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-2 text-right">Event Type</label>
+                <div class="col-md-4">
+                    <div class="input-group date">
+                        <input type="text" class="form-control" data-element="EventType" name="EventType" disabled="disabled" />
+                        @*<span class="input-group-addon"><i class="fa fa-search"></i></span>*@
+                    </div>
+                </div>
+                @*<label class="col-md-2 text-right">Event Topic</label>
+            <div class="col-md-4">
+                <div class="input-group date">
+                    <p data-element="EventTopic" name="EventTopic" class="form-control"></p>
+                    @*<input type="text" class="form-control" data-element="EventTopic" name="EventTopic" disabled="disabled"/>*@
+                @*<span class="input-group-addon"><i class="fa fa-search"></i></span>*@
+                @*</div>
+            </div>*@
+            </div>
+            <div class="form-group">
+                <label class="col-md-2 text-right">Staff</label>
+                <div class="col-md-4">
+                    <input class="form-control" data-element="Staff" name="Staff" disabled="disabled" />
+                </div>
+                <label class="col-md-2 text-right">Created On</label>
+                <div class="col-md-4">
+                    <input class="form-control" data-element="CreatedOn" name="CreatedOn" disabled="disabled" />
+                </div>
+            </div>
+            @*<div class="form-group">
+            <label class="col-md-2 text-right">Listing Privacy</label>
+            <div class="col-md-4">
+                <input type="text" class="form-control" data-element="ListingPrivacy" name="ListingPrivacy" disabled="disabled"/>
+            </div>
+        </div>*@
+
+            <table class="table" id="model_table">
+            </table>
+        </form>
+    </div>
+</div>
+
+@section scripts{
+<script src="~/Areas/Admin/Content/scripts/ticketing-event-detail.js"></script>
+}

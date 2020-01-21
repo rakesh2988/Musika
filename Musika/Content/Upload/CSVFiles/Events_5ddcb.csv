@@ -1,0 +1,6 @@
+ EventId, TicketCategory, TicketType, Price, Quantity, BalanceTickets, PackageStartDate, PackageEndDate
+ 1, t1, Paid, 100.00, 100, 96, 1/24/2019 12:00:00 AM, 1/31/2019 12:00:00 AM
+ 1, t2, Paid, 100.00, 100, 99, 1/24/2019 12:00:00 AM, 1/31/2019 12:00:00 AM
+ 1, t3, Free, 0.00, 19, 0, 1/24/2019 12:00:00 AM, 1/31/2019 12:00:00 AM
+ Event_Name, Event_Description, ArtistName, About, VenueCity, VenueCountry, VenueName, VenueState, Alternate_Names, BannerImage_URL, CreatedDate, Date_Local, Decade, ImageURL, Main_Genre, ModifiedDate, NoOfUserGoing, Organizer_Description, Organizer_Name, TicketURL, Time_Local
+ event-23-jan, fgdfgdfgfd, Baby Rasta, , , , , , , https://i.scdn.co/image/bb5b8bc7fe6c1adc9cb734da1988c41c119f6a7c, 8/26/2016 06:59:56 PM, 1/25/2019, 2000s, https://i.scdn.co/image/bb5b8bc7fe6c1adc9cb734da1988c41c119f6a7c, latin, 10/1/2018 09:29:11 PM, 0, dfgdfgfdg, sdogra, http://23.111.138.246/TicketEventCheckout.aspx, 01:00 AM

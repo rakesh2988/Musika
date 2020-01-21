@@ -1,0 +1,94 @@
+
+a.logout {
+  font-size: 16px;
+  padding: 20px 12px 15px 12px;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+.hidden-xs {
+  float: left;
+  text-align: right;
+}
+
+  .hidden-xs .logout-outer {
+    float: right;
+    margin-right: 0px;
+    margin-top: 8px;
+  }
+
+  .hidden-xs .login-outer {
+    margin-top: 0px !important;
+  }
+
+  .hidden-xs .login_signup {
+    text-align: right;
+  }
+
+    .hidden-xs .login_signup .signup-outer, .hidden-xs .login_signup .login-outer {
+      float: right;
+    }
+
+header {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  float: left;
+}
+
+.navbar-brand {
+  width: 90px;
+  margin-bottom: 2px;
+}
+
+  .navbar-brand img {
+    max-width: 100%;
+  }
+
+.navbar-brand {
+  padding: 0px 15px !important;
+}
+
+.navbar-header {
+  float: left !important;
+  margin-bottom: 6px !important;
+}
+
+.dropdown i {
+  color: #fff;
+  padding: 5px 8px;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  font-size: 22px;
+  margin: 6px 0px;
+}
+
+.profilemenu {
+  width: 252px !important;
+  float: right !important;
+  left: 90px !important;
+  top: 63px !important;
+  background-color: #1ad0e7 !important;
+  padding: 15px 0px !important;
+}
+
+  .profilemenu li a {
+    color: #fff !important;
+    font-size: 15px;
+
+  }
+
+    .profilemenu li a:hover {
+      color: #333 !important;
+      cursor:pointer;
+    }
+
+.login_signup a {
+  color: #fff;
+}
+ul.dropdown-menu.profilemenu li a span {
+  font-size: 13px;
+  margin-right: 10px;
+  float: left;
+  margin-top: 3px;
+}

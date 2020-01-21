@@ -1,0 +1,21 @@
+ Event_Name, Event_Description, ArtistName, BannerImage_URL, CreatedDate, EventDate, Decade, ImageURL, Main_Genre, ModifiedDate, NoOfUserGoing, Organizer_Description, Organizer_Name, TicketURL, About, VenueCity, VenueCountry, VenueName, VenueState, Alternate_Names, Time_Local
+ gbfd, fdgdfgfdg, Shakira, https://i.scdn.co/image/cd060b66f9e432ce43f6c7b201f75771cd44b332, 8/29/2016 09:47:45 AM, 1/25/2019, 1990s / 2000s / 2010s, https://i.scdn.co/image/cd060b66f9e432ce43f6c7b201f75771cd44b332, Pop, 1/9/2019 09:40:46 AM, 2, dfgdfgdf, sdogra, http://23.111.138.246/TicketEventCheckout.aspx, , , , , , Shakira Mebarak, 07:00 AM
+
+
+ EventId, TicketCategory, TicketType, Price, Quantity, BalanceTickets, PackageStartDate, PackageEndDate
+ 3, ee, Paid, 300.00, 230, 217, 1/23/2019 12:00:00 AM, 1/31/2019 12:00:00 AM
+
+
+ UserID, GoingUserName, Email, CreatedDate
+ 7909, Web App, rahulnair.eminence@gmail.com, 1/24/2019
+ 8498, Manisha, mishurathore@gmail.com, 1/24/2019
+
+
+ Category, TotalTickets, Sold, Attendees, UnSold
+ Paid, 230, 13, 3, 217
+
+
+ UserName, Gender, Country, Email, TicketCategory, TicketType
+ Manisha, Female, US, shalludogra.eminence-buyer@gmail.com, ee, Paid
+ Web App, Female, US, shalludogra.eminence-buyer@gmail.com, ee, Paid
+ Web App, Male, US, shalludogra.eminence-buyer@gmail.com, ee, Paid

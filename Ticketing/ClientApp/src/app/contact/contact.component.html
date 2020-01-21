@@ -1,0 +1,89 @@
+
+  <div class="container">
+    <div class="cover_txt_row row">
+      <div class="col-sm-7">
+        <div class="cover_left_container">
+        <h2>Contact Us</h2>
+          <img src="../../assets/Contact-us.png" alt="contact">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="left_left_cover">
+                <h3>Address</h3>
+                <p> Musika, LLC<br>
+                  Attention: Legal Department<br>
+                  1216 Broadway, 4th Floor<br>
+                  New York, NY 10001
+                </p>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="left_right_cover">
+                <span class="contact_number">
+                  
+                  <a href="tel:888-730-5310"><span>MIAMI</span>  888-730-5310 <i class="fa fa-phone" aria-hidden="true"></i></a>
+                  
+                </span>
+                <span class="contact_number">
+                  
+                  <a href="tel:888-730-5310"><span> SANTO DOMINGO</span>  829-954-8355 <i class="fa fa-phone" aria-hidden="true"></i></a>
+
+                </span>
+                <span class="contact_email">
+                  <a href="mailto:support@MusikaApp.com">
+                    support@MusikaApp.com
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="cover_contact_form">
+          <h2>Get In Touch</h2>
+          <p>Please fill The form for the latest Updates</p>
+          <form name="form" (ngSubmit)="register()" #formDir="ngForm" [formGroup]="registerForm" novalidate>
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="name" formControlName="Name" placeholder="Full Name" required />
+              <span class="text-danger" *ngIf="Name?.invalid && formDir.submitted">
+                Name is required.
+              </span>
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="E-Mail Id" required formControlName="Email" />
+              <span class="text-danger" [hidden]="Email?.errors?.pattern" *ngIf="Email?.invalid && formDir.submitted">
+                Email is required.
+              </span>
+              <span class="text-danger" [hidden]="!Email?.errors?.pattern">
+                Invalid pattern
+              </span>
+            </div>
+
+            <div class="form-group">
+              <input type="text" class="form-control" name="address" formControlName="Address" placeholder="Address" required />
+              <span class="text-danger" *ngIf="Address?.invalid && formDir.submitted">
+                Address is required.
+              </span>
+            </div>
+
+            <div class="form-group">
+              <textarea placeholder="Comments" class="form-control" formControlName="Message" required></textarea>
+              <span class="text-danger" *ngIf="Message?.invalid && formDir.submitted">
+                Comments is required.
+              </span>
+            </div>
+
+          
+            <div class="form-group">
+              <input type="submit" [disabled]="loading" value="Save" class="btn btn-primary" />
+              <p class={{msgcss}} *ngIf="IsMessage"><b>{{ responseMessage }} </b> </p>
+              <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

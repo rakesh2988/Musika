@@ -1,0 +1,285 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E9C0A9A-E78A-45E0-8C81-7FEBE07B973B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Musika.Models</RootNamespace>
+    <AssemblyName>Musika.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Ads.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistBackup.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistBackup2.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistGenre.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistPhotos.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistRelated.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Artists.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistsNotLatin.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CountriesList.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CountryCodes.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Coupons.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CreditCardDetails.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Events.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Genre.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HotTour.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ImportBulkTicket.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MSource.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusicSource.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusikaModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusikaModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusikaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MusikaModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MusikaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NotificationSend.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Notification_test.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentStatus.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpGetEventDetailsByTourDateId_Result.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StateList.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tempEmails.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingCategory.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventNewStaff.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventNewStaffTemp.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEvents.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventsNew.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventsNewTemp.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventTicketConfirmation.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventTicketConfirmationTemp.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventTickets.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventTicketsSummary.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingEventTicketsSummaryTemp.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingInventory.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingInventoryDetails.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingInventoryDetailsNew.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingInventoryNew.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingUsers.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TourDate.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TourPerformers.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TourPhoto.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UsCities.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserActivation.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserArtists.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserDevices.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserFriends.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserGoing.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserNotifications.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserSettings.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Users_BAK.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserTourDate.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UtcTimeZone.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Venue.cs">
+      <DependentUpon>MusikaModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="MusikaModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MusikaModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="MusikaModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MusikaModel.edmx</DependentUpon>
+      <LastGenOutput>MusikaModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="MusikaModel.edmx.diagram">
+      <DependentUpon>MusikaModel.edmx</DependentUpon>
+    </None>
+    <None Include="MusikaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>MusikaModel.edmx</DependentUpon>
+      <LastGenOutput>MusikaModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

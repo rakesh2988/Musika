@@ -1,0 +1,47 @@
+<ngx-spinner></ngx-spinner>
+<p>
+  <a [routerLink]="['/Couponcreation']">Add Coupon</a>
+</p>
+<div *ngIf="couponList?.length>0" style="align-content:center;">
+  <div class="listing_page">
+    <h2>Coupon Listing</h2>
+    <p class={{msgcss}} *ngIf="IsMessage"><b>{{ responseMessage }} </b> </p>
+    <div class="table-responsive2">
+      <div class="cover_search">
+        <input type="text" class="form-control" name="searchString" placeholder="Search CouponCode...." [(ngModel)]="searchString">
+        <i class="fa fa-search" aria-hidden="true"></i>
+      </div>
+      <table class='table'>
+        <thead>
+          <tr>
+            <th>CouponCode</th>
+            <th>TicketCategory</th>
+            <th>EventName</th>
+            <th>ExpiryDate</th>
+            <th>Discount</th>
+            <th>Action</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let temp of couponList  | filter : 'CouponCode' : searchString | paginate: { itemsPerPage: 10, currentPage: p }">
+
+            <td>{{temp.CouponCode}}</td>
+            <td>{{ temp.TicketCategory }} </td>
+
+            <td>{{ temp.EventName }}</td>
+            <td>{{ temp.ExpiryDate| date: format }}</td>
+            <td>{{temp.Discount}}</td>
+            <td>
+              <a [routerLink]="['/coupon/edit/', temp.Id]" title="Edit"><i class="fa fa-pencil" aria-hidden="true"></i></a> |
+              <a [routerLink]="" (click)="delete(temp.Id)" title="Delete"><i class="fa fa-trash" aria-hidden="true"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="pagnation_cover">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+    </div>
+  </div>
+</div>

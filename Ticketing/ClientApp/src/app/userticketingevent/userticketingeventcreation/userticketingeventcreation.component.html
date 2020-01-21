@@ -1,0 +1,96 @@
+<!--<h1>Login Page</h1>-->
+
+<div style="align-content:center;">
+
+  <!--<div class="col-md-6 col-md-offset-3">-->
+  <div class="col-md-12">
+    <h2>User Ticketing Event Creation</h2>
+    <form name="form" (ngSubmit)="f.form.valid" #f="ngForm" novalidate>
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+        <label for="username" class="col-md-3">Event Name</label>
+        <input type="text" class="col-md-3" name="eventname" [(ngModel)]="model.eventname" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !eventname.valid" class="help-block">Event Name is required</div>-->
+        <label for="username" class="col-md-3 a1">Seat Geek Id</label>
+        <input type="text" class="col-md-3" name="seatgeekid" [(ngModel)]="model.seatgeekid" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !eventname.valid" class="help-block">Seat Geek ID is required</div>-->
+      </div>
+
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted && !model.artistname.valid }">
+        <label for="artistname" class="col-md-3">Artist Name</label>
+        <input type="text" class="col-md-3" name="artistname" [(ngModel)]="model.artistname" #password="ngModel" required />
+        <!--<div *ngIf="f.submitted && !artistname.valid" class="help-block">Artist Name is required</div>-->
+        <label for="localdatetime" class="col-md-3">Local Date Time</label>
+        <input type="text" class="col-md-3" name="localdatetime" [(ngModel)]="model.localdatetime" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !localdatetime.valid" class="help-block">Local Date Time is required</div>-->
+      </div>
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted && !model.venuename.valid }">
+        <label for="venuename" class="col-md-3">Venue Name</label>
+        <input type="text" class="col-md-3" name="venuename" [(ngModel)]="model.venuename" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !eventname.valid" class="help-block">Event Name is required</div>-->
+        <label for="venueid" class="col-md-3">Venue Id</label>
+        <input type="text" class="col-md-3" name="venueid" [(ngModel)]="model.venueid" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !eventname.valid" class="help-block">Seat Geek ID is required</div>-->
+      </div>
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted && !model.address1.valid }">
+        <label for="address1" class="col-md-3">Venue Address 1</label>
+        <input type="text" class="col-md-3" name="address1" [(ngModel)]="model.address1" #password="ngModel" required />
+        <!--<div *ngIf="f.submitted && !artistname.valid" class="help-block">Artist Name is required</div>-->
+        <label for="address2" class="col-md-3">Venue Address 2</label>
+        <input type="text" class="col-md-3" name="address2" [(ngModel)]="model.address2" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !localdatetime.valid" class="help-block">Local Date Time is required</div>-->
+      </div>
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted && !model.country.valid }">
+        <label for="country" class="col-md-3">Venue Country</label>
+        <input type="text" class="col-md-3" name="country" [(ngModel)]="model.country" #password="ngModel" required />
+        <!--<div *ngIf="f.submitted && !artistname.valid" class="help-block">Artist Name is required</div>-->
+        <label for="city" class="col-md-3">Venue City</label>
+        <input type="text" class="col-md-3" name="city" [(ngModel)]="model.city" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !localdatetime.valid" class="help-block">Local Date Time is required</div>-->
+      </div>
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted && !model.state.valid }">
+        <label for="state" class="col-md-3">Venue State</label>
+        <input type="text" class="col-md-3" name="state" [(ngModel)]="model.state" #password="ngModel" required />
+        <!--<div *ngIf="f.submitted && !artistname.valid" class="help-block">Artist Name is required</div>-->
+        <label for="postal" class="col-md-3">Venue Postal</label>
+        <input type="text" class="col-md-3" name="postal" [(ngModel)]="model.postal" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !localdatetime.valid" class="help-block">Local Date Time is required</div>-->
+      </div>
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted && !model.venuelat.valid }">
+        <label for="lat" class="col-md-3">Venue Lat</label>
+        <input type="text" class="col-md-3" name="stste" [(ngModel)]="model.venuelat" #password="ngModel" required />
+        <!--<div *ngIf="f.submitted && !artistname.valid" class="help-block">Artist Name is required</div>-->
+        <label for="long" class="col-md-3">Venue Long</label>
+        <input type="text" class="col-md-3" name="long" [(ngModel)]="model.venuelong" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !localdatetime.valid" class="help-block">Local Date Time is required</div>-->
+      </div>
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted && !model.timezone.valid }">
+        <label for="lat" class="col-md-3">Venue Timezone</label>
+        <input type="text" class="col-md-3" name="timezone" [(ngModel)]="model.timezone" #password="ngModel" required />
+        <!--<div *ngIf="f.submitted && !artistname.valid" class="help-block">Artist Name is required</div>-->
+        <!--<label for="long" class="col-md-3">Venue Long</label>-->
+        <input type="file" class="col-md-3" name="long" [(ngModel)]="model.file" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !localdatetime.valid" class="help-block">Local Date Time is required</div>-->
+      </div>
+      <div class="col-md-12" [ngClass]="{ 'has-error': f.submitted }">
+        <!--<label for="ticketUrl" class="col-md-3">Ticket Url</label>
+        <input type="text" class="col-md-3" name="ticketUrl" [(ngModel)]="model.ticketUrl" #password="ngModel" required />-->
+        <!--<div *ngIf="f.submitted && !artistname.valid" class="help-block">Artist Name is required</div>-->
+        <label for="hshTag" class="col-md-3">Hash Tag</label>
+        <input type="text" class="col-md-3" name="hshTag" [(ngModel)]="model.hshTag" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !localdatetime.valid" class="help-block">Local Date Time is required</div>-->
+      
+        <label for="totalSeats" class="col-md-3">Total Seats</label>
+        <input type="text" class="col-md-3" name="hshTag" [(ngModel)]="model.totalSeats" #username="ngModel" required />
+        <!--<div *ngIf="f.submitted && !localdatetime.valid" class="help-block">Local Date Time is required</div>-->
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Save</button>
+        <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+      </div>
+      <div class="form-group">
+        <a [routerLink]="['/register']" class="btn btn-link">Register</a>
+        <a [routerLink]="['/forgetpassword']" class="btn btn-link">Forget Password</a>
+      </div>
+    </form>
+  </div>
+</div>

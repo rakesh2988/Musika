@@ -1,0 +1,92 @@
+<ngx-spinner></ngx-spinner>
+
+<div class="col-md-12 heading_styling listing_page">
+  <h2>Tickets Analytics</h2>
+  <div class="table-responsive">
+    <table class='table table_top'>
+      <thead>
+        <tr>
+          <th>Total Tickets</th>
+          <th>Sold Tickets</th>
+          <th>Attendees</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="eventAnalytics">
+        <tr>
+          <td>{{ eventAnalytics.TotalTickets }}</td>
+          <td>{{ eventAnalytics.TotalSales }}</td>
+          <td>{{ eventAnalytics.Attendees }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="cover_ticket_analytic">
+    <div class="col-md-8 classcol-1">
+      <div *ngIf="isDataAvailableTicket" id="chart-container">
+        <canvas baseChart
+                [chartType]="'pie'"
+                [data]="chartData"
+                [labels]="chartLabels"
+                [options]="chartOptions"></canvas>
+      </div>
+    </div>
+    <div class="col-md-8 classcol-1">
+      <div *ngIf="isDataAvailableGender" id="chart-container">
+        <canvas baseChart
+                [chartType]="'pie'"
+                [data]="chartDataGender"
+                [labels]="chartLabelsGender"
+                [options]="chartOptionsGender"></canvas>
+      </div>
+    </div>
+    <!--<div class="col-md-6">-->
+    <h2 *ngIf="isDataAvailable">Ticket Category Analytics</h2>
+    <div id="chart-container1" *ngIf="isDataAvailable" class="col-md-8 classcol-1">
+      <canvas baseChart
+              [chartType]="'bar'"
+              [datasets]="barData"
+              [labels]="barLabels"
+              [options]="barOptions"></canvas>
+    </div>
+    <!--</div>-->
+    <h2 *ngIf="isDataAvailableAge">Age Group Analytics</h2>
+    <div *ngIf="isDataAvailableAge" class="col-md-8 classcol-1" id="chart-container1">
+      <canvas baseChart
+              [datasets]="lineChartData"
+              [labels]="lineChartLabels"
+              [options]="lineChartOptions"
+              [colors]="lineChartColors"
+              [legend]="lineChartLegend"
+              [chartType]="lineChartType"></canvas>
+    </div>
+  </div>
+ 
+    <div *ngIf="eventUsers?.length>0" class="user_data_cover">
+      <h2>User Data</h2>
+      <div class="table-responsive2">
+        <table class='table'>
+          <thead>
+            <tr>
+              <th>UserName</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Address</th>
+              <th>Country</th>
+              <th>Attendees</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let users of eventUsers;">
+              <td>{{ users.UserName }}</td>
+              <td>{{ users.Email }}</td>
+              <td>{{ users.PhoneNumber }}</td>
+              <td>{{ users.Address }}</td>
+              <td>{{ users.Country }}</td>
+              <td>{{ users.IsAttending }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+ 

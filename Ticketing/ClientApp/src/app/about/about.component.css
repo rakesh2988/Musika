@@ -1,0 +1,100 @@
+
+header {
+  width: 100%;
+  float: left;
+  background-color: #000;
+  padding: 40px 0px;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+header h2 {
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 36px;
+  text-align: center;
+  width: 100%;
+  float: left;
+}
+
+.cover_left_business {
+  width: 100%;
+  text-align: center;
+  margin: 130px 0px 60px 0px;
+  float: left;
+}
+
+  .cover_left_business h3 {
+    font-size: 30px;
+  }
+
+  .cover_left_business p {
+    font-size: 16px;
+    margin-top: 0px;
+    float: left;
+    color: #444;
+  }
+
+.cover_business {
+  width: 100%;
+  float: left;
+  margin: 60px 0px;
+}
+
+  .cover_business .cover_inner_business {
+    position: relative;
+    width: 100%;
+    border: 1px solid #1ad0e7;
+    padding: 10px;
+    border-radius: 3px;
+  }
+
+    .cover_business .cover_inner_business span {
+      width: 50px;
+      display: inline-block;
+      position: absolute;
+      line-height: 50px;
+      left: 50%;
+      right: 0px;
+      margin-left: -25px;
+      top: -20px;
+      border-radius: 50px;
+      background-color: #1ad0e7;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    .cover_business .cover_inner_business h3 {
+      font-size: 20px;
+      margin-top: 40px;
+      margin-bottom: 15px;
+    }
+
+    .cover_business .cover_inner_business p {
+      font-size: 14px;
+      text-align: justify;
+      padding: 0px 5px;
+    }
+
+    .cover_business .cover_inner_business a {
+      color: #fff;
+      margin: 15px 0px;
+      display: inline-block;
+      background-color: #1ad0e7;
+      padding: 8px 17px;
+      font-size: 16px;
+    }
+
+@media screen and (max-width: 767px) {
+  .cover_business .cover_inner_business {
+    margin-top: 50px;
+  }
+  .cover_business{
+    margin: 20px 0px;
+  }
+}

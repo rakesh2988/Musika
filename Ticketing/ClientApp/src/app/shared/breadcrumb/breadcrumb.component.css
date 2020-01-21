@@ -1,0 +1,31 @@
+.breadcrumb {
+  width: 94%;
+  float: left;
+}
+
+.breadcrumb li {
+  float: left !important;
+  width: auto !important;
+}
+  .breadcrumb li a {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+    color: #1ad0e7;
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  .breadcrumb li a:hover {
+    text-decoration: none;
+  }
+  .breadcrumb li:before {
+    color: #1ad0e7;
+    float: left;
+  }
+
+@media screen and (max-width: 767px) {
+  .breadcrumb {
+    width: 100%;
+    float: left;
+  }
+}

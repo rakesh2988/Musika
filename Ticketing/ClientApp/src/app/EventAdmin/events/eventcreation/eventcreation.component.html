@@ -1,0 +1,410 @@
+<!--<h1>Login Page</h1>-->
+<ngx-spinner></ngx-spinner>
+
+<div class="event_creation_page">
+  <div class="row">
+    <div class="col-md-12 col-md-offset-2 ticket_create_margin">
+
+      <form name="form" (ngSubmit)="save()" #formDir="ngForm" [formGroup]="registerForm" novalidate enctype="multipart/form-data">
+        <div class="cover_event_creation">
+          <h2><span class="ico-box ico--small ico--color-teal ico--color-brand-white" style="background-color:aqua;width:20px;">1</span>&nbsp;&nbsp;{{title}} Tickets</h2>
+          <div class="form-group">
+            <div class="row" style="text-align:center;">
+              <label>What type of ticket would you like to start with?</label>
+            </div>
+
+          </div>
+
+          <section class="sidebar_design">
+            <div class="">
+
+              <div class="ticket_cover">
+                <div class="ticket_border_color custom_add-event-outer">
+                  <table class="table table-striped table-bordered table-responsive2 custom_add-event">
+                    <thead>
+                      <tr>
+                        <th class="ticket_package">Ticket Package</th>
+                        <th class="ticket_type">Ticket Type*</th>
+                        <th class="quantity_available">Quantity Available*</th>
+                        <th class="ticket_price">Price</th>
+                        <th class="start_date">Start Date</th>
+                        <th class="end_date">End Date</th>
+                        <!--<th class="ticket_summary">Summary</th>-->
+                        <th class="">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let field of ticketArray; let i = index">
+                        <td>
+                          <input [(ngModel)]="field.TicketCategory" class="form-control" type="text" placeholder="Early Bird, RSVP..."
+                                 [ngModelOptions]="{standalone: true}" name="{{field.TicketCategory}}" />
+                        </td>
+                        <td>
+                          <select #price [(ngModel)]="field.TicketType" class="form-control" [ngModelOptions]="{standalone: true}"
+                                  name="TicketCategory" (change)="OnTicketCategoryEditChange($event.target.value,i)">
+                            <option value="select" selected="selected">Select Type</option>
+                            <option value="Free">Free</option>
+                            <option value="Paid">Paid</option>
+                            <option value="Donation">Donation</option>
+                          </select>
+                        </td>
+                        <td>
+                          <input [(ngModel)]="field.Quantity" class="form-control" type="number" placeholder="100"
+                                 [ngModelOptions]="{standalone: true}" name="{{field.Quantity}}" />
+                        </td>
+                        <td *ngIf="field.TicketType == 'Paid'">
+                          <input [(ngModel)]="field.Price" class="form-control" type="number" placeholder="$"
+                                 [ngModelOptions]="{standalone: true}" name="{{field.Price}}" />
+                        </td>
+                        <td *ngIf="field.TicketType != 'Paid'"></td>
+                        <td>
+
+                          <my-date-picker class="datpicker" [options]="startDate"
+                                          [ngModelOptions]="{standalone: true}" required [(ngModel)]="field.PackageStartDate"
+                                          placeholder="" (dateChanged)="onArrStartDateChanged($event)"></my-date-picker>
+                        </td>
+                        <td>
+
+                          <my-date-picker class="datpicker" [options]="packageenddate"
+                                          [ngModelOptions]="{standalone: true}" required [(ngModel)]="field.PackageEndDate"
+                                          placeholder="" (dateChanged)="onArrEndDateChanged($event,i)"></my-date-picker>
+                        </td>
+                        <!--<td>
+                          <textarea [ngModelOptions]="{standalone: true}" [(ngModel)]="field.Summary"></textarea>
+                        </td>-->
+
+
+                        <td>
+
+                          <button class="btn btn-default" type="button" (click)="deleteFieldValue(i)">Delete</button>
+
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <input class="form-control" type="text" id="newAttributeTicket" placeholder="Early Bird, RSVP..."
+                                 [ngModelOptions]="{standalone: true}" [(ngModel)]="newTicketRow.TicketCategory" name="newAttributeTicket" />
+
+                        </td>
+
+                        <td>
+                          <select [(ngModel)]="newTicketRow.TicketType" id="newAttributeCategory" class="form-control" [ngModelOptions]="{standalone: true}"
+                                  (change)="OnTicketCategory($event.target.value)" name="TicketCategory">
+                            <option value="select" selected="selected">Select Type</option>
+                            <option value="Free">Free</option>
+                            <option value="Paid">Paid</option>
+                            <option value="Donation">Donation</option>
+                          </select>
+                        </td>
+
+                        <td>
+
+                          <input class="form-control" type="text" id="newAttributeQuantity" placeholder="100"
+                                 [ngModelOptions]="{standalone: true}" [(ngModel)]="newTicketRow.Quantity" name="newAttributeQuantity" />
+                        </td>
+                        <td>
+                          <input *ngIf="IsFlag" class="form-control" type="text" id="newAttributePrice" placeholder="$"
+                                 [ngModelOptions]="{standalone: true}" [(ngModel)]="newTicketRow.Price" name="newAttributePrice" />
+                        </td>
+                        <td>
+                          <my-date-picker class="datpicker" [options]="packagestartdate"
+                                          [ngModelOptions]="{standalone: true}" required [(ngModel)]="newTicketRow.PackageStartDate"
+                                          placeholder="" (dateChanged)="onArrStartDateChanged($event)"></my-date-picker>
+                        </td>
+                        <td>
+                          <my-date-picker class="datpicker" [options]="newPackageEndDate"
+                                          [ngModelOptions]="{standalone: true}" required [(ngModel)]="newTicketRow.PackageEndDate"
+                                          placeholder="" (dateChanged)="onArrEndDateChanged($event)"></my-date-picker>
+                        </td>
+                        <!--<td>
+                          <textarea [ngModelOptions]="{standalone: true}" [(ngModel)]="newTicketRow.Summary"></textarea>
+                        </td>-->
+
+                        <td>
+                          <button class="btn btn-default" type="button" (click)="addFieldValue()">Add</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="text-danger" *ngIf="Isprice">Please Enter Price for Paid Type Ticket</p>
+                </div>
+
+                <div class="ticket_buttons">
+                  <div class="ticket_border_color">
+                    <div class="cover_inputs_cover">
+                      <span>
+                        <p>In which country will you be paid?</p>
+
+                        <ngx-select [items]="countrylist" optionValueField="CountryCodeId"
+                                    optionTextField="Name" placeholder="Select Country" class=""
+                                    [ngModelOptions]="{standalone: true}" [(ngModel)]="CountryId"></ngx-select>
+                      </span>
+                      <span>
+                        <p>Currency</p>
+                        <select [(ngModel)]="Currency" class="form-control" [ngModelOptions]="{standalone: true}"
+                                name="currency_code">
+                          <option value="">Select Currency</option>
+                          <option value="DOP" selected="selected">Peso</option>
+                          <option value="USD">U.S. Dollars $</option>
+                        </select>
+                      </span>
+                      <span>
+                        <p>Service Fee (%)</p>
+                        <input type="text" class="form-control" [(ngModel)]="ServiceFee" [ngModelOptions]="{standalone: true}"  placeholder="Enter the Service Fee" />
+                      </span>
+                      <span>
+                        <p>Tax (ITBIS) (%)</p>
+                        <input type="text" class="form-control" [(ngModel)]="Tax" [ngModelOptions]="{standalone: true}" placeholder="Enter the Tax (ITBIS)" />
+                      </span>
+
+                    </div>
+                    <div class="warnings warnings_border">
+                      <p class="left">Once your first ticket has sold,the above information can't be changed</p>
+                      <p class="right">My country isn't listed</p>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </section>
+        </div>
+
+        <div class="cover_event_creation">
+          <h2><span class="ico-box ico--small ico--color-teal ico--color-brand-white" style="background-color:aqua;width:20px;">2</span>&nbsp;&nbsp;Event {{title}}</h2>
+          <div class="form-group">
+            <label for="eventtitle">Event Title*</label>
+            <input type="text" class="form-control" formControlName="EventTitle" #Title required data-placeholder="Enter the event title" />
+            <span class="text-danger" *ngIf="EventTitle?.invalid && formDir.submitted">
+              Event Title is required.
+            </span>
+          </div>
+          <div class="form-group">
+            <!--<div>
+              <label for="venuename">Event Location* </label>
+              <input type="text" class="form-control" #Location formControlName="EventLocation" required />
+              <span class="text-danger" *ngIf="EventLocation?.invalid && formDir.submitted">
+                Event Location is required.
+              </span>
+            </div>-->
+            <div class="vanue_name">
+              <label #Venue for="venuename">Venue Name*</label>
+              <ngx-select [items]="Venuelist" optionValueField="VenueName"
+                          optionTextField="VenueName" (select)="doSelect($event)" placeholder="Select Venue" class=""
+                          formControlName="VenueName"></ngx-select>
+              <span class="text-danger" *ngIf="VenueName?.invalid && formDir.submitted">
+                Venue Name is required.
+              </span>
+            </div>
+            <div id="address">
+              <div class="row" style="margin-left:1px;">
+                <label>Address</label>
+                <p class=""></p>
+                <input class="form-control" type="text" readonly="readonly" formControlName="Address1" data-placeholder="Enter the address1" placeholder="Enter the address 1">
+                <p class=""></p>
+                <input class="form-control" type="text" readonly="readonly" formControlName="Address2" data-placeholder="Enter the address2" placeholder="Enter the address 2">
+                <p class=""></p>
+                <input class="form-control" type="text" readonly="readonly" formControlName="City" data-placeholder="Enter the city" placeholder="Enter the city">
+                <p class=""></p>
+                <div class="g-group">
+
+                  <div class="g-cell g-cell-1-2">
+                    <input class="form-control" type="text" readonly="readonly" formControlName="State" data-placeholder="Enter the state" placeholder="Enter the state">
+                  </div>
+                  <p class=""></p>
+                  <div class="g-cell g-cell-1-2">
+                    <input class="form-control" type="text" readonly="readonly" formControlName="ZipCode" data-placeholder="Enter the zip code" placeholder="Enter the zipcode">
+                  </div>
+                  <div class="">
+                    <div class="">
+                      <span class="required"></span>
+                    </div>
+                  </div>
+
+                  <p class=""></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!--<div class="form-group">
+
+            <label for="ticketurl">Ticket Url</label>
+            <input type="text" class="form-control" formControlName="TicketUrl" #ticket required />
+            <span class="text-danger" *ngIf="TicketUrl?.invalid && formDir.submitted">
+              TicketUrl is required.
+            </span>
+          </div>-->
+          <div class="form-group">
+            <label for="staff">Staff</label>
+            <ng-multiselect-dropdown [placeholder]="'Select Staff'"
+                                     [data]="Userlist"
+                                     [ngModelOptions]="{standalone: true}"
+                                     [(ngModel)]="selectedItems"
+                                     [settings]="dropdownSettings">
+            </ng-multiselect-dropdown>
+          </div>
+
+          <div class="form-group datepicker_div">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="location">Event Start Date</label>
+                  </div>
+                  <div class="col-md-6">
+                    <my-date-picker class="datpicker" [options]="startDate" [selDate]="arrDate"
+                                    required formControlName="StartDate" placeholder="" (dateChanged)="onArrDateChanged($event)"></my-date-picker>
+                    <span class="text-danger" *ngIf="StartDate?.invalid && formDir.submitted">
+                      StartDate is required.
+                    </span>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="time" class="form-control" (click)="openStartTime($event)" formControlName="StartTime"
+                           value="{{ClockStartTime}}" required />
+                    <span class="text-danger" *ngIf="StartTime?.invalid && formDir.submitted">
+                      StartTime is required.
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="row">
+                  <div class="col-md-12">
+                    <label for="location">Event End Date</label>
+                  </div>
+                  <div class="col-md-6">
+                    <my-date-picker class="datpicker" [options]="endDate" [selDate]="depDate"
+                                    formControlName="EndDate" placeholder="" (dateChanged)="onDepDateChanged($event)" required></my-date-picker>
+                    <span class="text-danger" *ngIf="EndDate?.invalid && formDir.submitted">
+                      EndDate is required.
+                    </span>
+                  </div>
+                  <div class="col-md-6">
+                    <input type="time" class="form-control" (click)="openEndTime($event)" formControlName="EndTime" value="{{ClockEndTime}}" required />
+
+                    <span class="text-danger" *ngIf="EndTime?.invalid && formDir.submitted">
+                      EndTime is required.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group datepicker_after">
+
+            <label for="filetoupload">Event Image</label>
+
+
+            <input type="file" (change)="onFileChange($event)" #fileInput required />
+
+
+            <div id="preview" *ngIf="imagepath" class="preview">
+              <img style="width:50%" [src]="imagepath">
+            </div>
+            <p *ngIf="IsValidImage">
+              <span class="text-danger">
+                {{IsValidImagemsg}}
+              </span>
+            </p>
+            <p *ngIf="ImageError">
+              <span class="text-danger">
+                Image is required.
+              </span>
+            </p>
+            <br />
+            <span>
+              We recommend using at least a 2160x1080px (2:1 ratio) image that's no larger than 10MB.
+            </span>
+          </div>
+        </div>
+        <div class="cover_event_creation artist_name_margin">
+          <h2><span class="ico-box ico--small ico--color-teal ico--color-brand-white" style="background-color:aqua;width:20px;">3</span>&nbsp;&nbsp;Additional Listing</h2>
+          <div class="form-group col-md-12 artist_name_cover">
+            <div class="row">
+              <label class="event_discription" for="eventdescription">Event Description</label>
+              <div class="form-group eventdescription">
+                <ck-editor name="editor" formControlName="EventDescription" skin="moono-lisa"
+                           language="en" [fullPage]="true" required></ck-editor>
+                <span class="text-danger" *ngIf="EventDescription?.invalid && formDir.submitted">
+                  EventDescription is required.
+                </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group organisar_description">
+                <label class="event_discription" for="organizerdescription">Organizer Description</label>
+                <ck-editor name="editor1" formControlName="OrganizerDescription" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+              </div>
+            </div>
+            <div class="row">
+              <div class="artistNameBox" id="artistNameBox">
+                <label class="artistName">Artist Name</label> <a href="https://docs.google.com/forms/d/1soYOKxDG8Ek3VIgkpvrGAxTwQpS-n2w26RgOr6jqr-E/viewform?edit_requested=true" target="_blank">Create Artist</a>
+              </div>
+              <div>
+                <ngx-select [items]="Artistlist" optionValueField="ArtistId"
+                            optionTextField="ArtistName" placeholder="Select Artist" class=""
+                            formControlName="ArtistId"></ngx-select>
+               
+                <!--<span class="text-danger" *ngIf="ArtistId?.invalid && formDir.submitted">
+                  Artist Name is required.
+                </span>-->
+              </div>
+            </div>
+            <div class="row">
+              <div>
+                <label>Event Type</label>
+              </div>
+              <div>
+                <ngx-select [items]="_items" optionValueField="_items"
+                            optionTextField="_items" placeholder="Select EventType" class=""
+                            formControlName="EventType"></ngx-select>
+              </div>
+            </div>
+            <!--<div class="row">
+              <div>
+                <label>Event Topics</label>
+              </div>
+              <div>
+                <ngx-select [items]="EventTopis" optionValueField="EventTopis"
+                            optionTextField="EventTopis" placeholder="Select EventType" class=""
+                            formControlName="EventTopic"></ngx-select>
+              </div>
+            </div>-->
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" [disabled]="loading" value="Save" class="btn btn-primary" />
+          <p class={{msgcss}} *ngIf="IsMessage"><b>{{ responseMessage }} </b></p>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </div>
+
+      </form>
+
+
+    </div>
+  </div>
+
+  <style>
+    .ico-box.ico--color-teal, .ico-box.ico--color-light-blue {
+      background-color: #0093D7;
+    }
+
+    .ico-box.ico--small {
+      width: 50px;
+      font-size: 35px;
+      line-height: 45px;
+      padding-bottom: 5px;
+    }
+  </style>
+
+</div>
+
+
+
+
+

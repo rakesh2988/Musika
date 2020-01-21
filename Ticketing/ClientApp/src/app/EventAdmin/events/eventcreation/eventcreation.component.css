@@ -1,0 +1,501 @@
+
+
+/*******custom add event 1dec css start******/
+
+.custom_add-event th, .custom_add-event td {
+  text-align: center;
+}
+  .custom_add-event th.ticket_package {
+    width: 200px;
+  }
+  .custom_add-event th.ticket_type {
+    width: 200px;
+  }
+  .custom_add-event th.quantity_available {
+    width: 152px;
+  }
+  .custom_add-event th.ticket_price {
+    width: 130px;
+  }
+  .custom_add-event th.start_date, .custom_add-event th.end_date {
+    width: 227px;
+  }
+div#artistNameBox {
+  margin-top: 25px;
+}
+  div#artistNameBox label.artistName {
+    width: auto;
+    margin-top: 0 !important;
+    margin-right: 10px;
+  }
+@media (max-width:1199px) {
+
+} 
+/*******custom add event 1dec css ends******/
+
+.preview {
+  margin: 15px 0px 15px 0px;
+}
+
+.sidebar_design, .top-section, .top-values, .ticket_buttons, .warnings, .tax_options, .refund_policys {
+  width: 100%;
+  float: left;
+}
+
+
+.ticket_cover {
+  width: 100%;
+  float: left;
+}
+
+.top-section {
+  background-color: #EFF3F6;
+  text-align: center;
+}
+
+.top-values {
+  text-align: center;
+}
+
+.ticket_cover span {
+  float: left;
+  line-height: 50px;
+  padding: 0px 5px;
+  box-sizing: border-box;
+}
+
+.ticket_cover .ticket-name {
+  width: 30%;
+}
+
+.ticket_cover .ticket-quantity {
+  width: 25%;
+}
+
+.ticket_cover .ticket-price {
+  width: 30%;
+}
+
+.ticket_cover .ticket-action {
+  width: 15%;
+}
+
+.top-values span input {
+  width: 100% !important;
+  float: left;
+  line-height: 34px;
+  padding: 0px 15px;
+  box-sizing: border-box;
+  margin: 15px 0px;
+}
+
+.ticket_buttons {
+  text-align: center;
+}
+
+  .ticket_buttons a {
+    float: none;
+  }
+
+  .ticket_buttons span {
+    width: 50%;
+    text-align: left;
+    height: initial;
+  }
+
+.ticket_cover .ticket_buttons span {
+  line-height: initial;
+  padding: 15px 0px;
+}
+
+  .ticket_cover .ticket_buttons span p {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .ticket_cover .ticket_buttons span select {
+    width: 99%;
+    float: left;
+    padding: 8px;
+  }
+
+.ticket_cover .ticket_buttons .warnings .left,
+.ticket_cover .ticket_buttons .warnings .right {
+  float: left;
+  font-size: 12px;
+  margin-top: 15px;
+}
+
+.ticket_cover .ticket_buttons .warnings .right {
+  float: right;
+}
+
+.tax_options, .refund_policys {
+  text-align: left;
+  padding: 0px 0px;
+}
+
+  .tax_options a {
+    padding: 0px;
+    border: none;
+    margin: 0px 0px 0px 0px;
+  }
+
+  .refund_policys p {
+    float: left;
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+    .refund_policys p input {
+      float: left;
+      margin-right: 10px;
+      margin-top: 4px;
+    }
+
+  .refund_policys a {
+    margin: 0px;
+    border: none;
+    padding: 0px;
+  }
+
+.refund_policys, .warnings {
+  border: none !important;
+}
+
+.ticket_create_margin {
+  margin: 0px !important;
+}
+
+.ticket_buttons a span.btn {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 20px 0px;
+  border-color: #1ad0e7 !important;
+  color: #1ad0e7 !important;
+  box-shadow: none;
+  letter-spacing: 0.5px;
+}
+
+.ticket_buttons a {
+  float: left;
+  padding: 0px 6px;
+}
+
+.ticket_buttons .btn-group.btn-group--responsive {
+  background-color: #EFF3F6;
+  width: 100%;
+  text-align: center;
+}
+
+  .ticket_buttons .btn-group.btn-group--responsive a {
+    float: none;
+    display: inline-block;
+  }
+
+.ticket_border_color {
+  width: 100%;
+  float: left;
+  padding: 15px;
+  box-sizing: border-box;
+  border: 1px solid #f2f2f2;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+.ticket_buttons .refund_policys {
+  border-bottom: none !important;
+}
+
+.ticket_border_color .warnings_border {
+  border-bottom: 1px solid #ccc !important;
+}
+
+.tax_options {
+  margin-top: 15px;
+}
+
+.ticket_border_color .tax_options p {
+  margin-bottom: 0px !important;
+}
+
+.ticket_border_color .warnings p {
+  color: #999;
+}
+
+.ticket_border_color .tax_options p.left {
+  font-size: 13px !important;
+  color: #999;
+}
+
+.form-group input, .form-group select {
+  margin-bottom: 15px !important;
+}
+
+.form-group .form-control {
+  margin-bottom: 15px !important;
+  height: initial !important;
+}
+
+  .form-group .form-control input {
+    margin-right: 7px !important;
+  }
+
+.label-primary {
+  background-color: transparent !important;
+}
+
+h2 span {
+  background: transparent !important;
+}
+
+h2 {
+  border-bottom: 2px solid #1ad0e7;
+}
+
+.datepicker_div input.form-control.ng-untouched.ng-pristine.ng-valid {
+  height: 34px !important;
+}
+
+.event_creation_page h2 {
+  margin-bottom: 30px;
+}
+
+.cover_event_creation {
+  width: 100%;
+  float: left;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  margin: 20px 0px;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+.event_creation_page {
+  width: 94% !important;
+}
+
+  .event_creation_page form .form-group label {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    float: left;
+    width: 100%;
+  }
+
+  .event_creation_page form .form-group input, .event_creation_page form .form-group select {
+    line-height: 30px;
+    background-color: #f2f2f2;
+    border: none;
+    box-shadow: none;
+  }
+
+.multiselect-dropdown .dropdown-btn {
+  line-height: 30px !important;
+  background-color: #f2f2f2 !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.event_creation_page #lnkAddress {
+  background-color: #1ad0e7;
+  padding: 9px 21px;
+  float: left;
+  margin: 26px 0px;
+  color: #fff;
+  border-radius: 3px;
+}
+
+  .event_creation_page #lnkAddress:hover {
+    text-decoration: none;
+    background-color: rgb(38, 174, 180);
+  }
+
+.event_creation_page form .form-group select.form-control {
+  height: 42px !important;
+}
+
+.form-group {
+  float: left;
+  width: 100%;
+}
+
+.event_discription {
+  margin: 12px 0px;
+  padding-left: 0px;
+}
+
+#remaining_ticket_display_options label {
+  float: left;
+  width: auto;
+  margin-left: 10px;
+  letter-spacing: 0px;
+  margin: 0px 0px;
+}
+
+#id_group-details-show_remaining {
+  width: auto !important;
+  float: left;
+}
+
+.form-group .btn.btn-primary {
+  background-color: #1ad0e7 !important;
+}
+
+.tax_options p {
+  float: left;
+  margin-right: 23px;
+}
+
+.refund_policys a {
+  color: #333;
+  text-decoration: none;
+  padding: 0px !important;
+}
+
+.ticket_create_margin .form-group label {
+  margin-top: 25px !important;
+}
+
+.ticket_create_margin .cover_event_creation .form-group.organisar_description label.event_discription {
+  margin-top: 50px !important;
+}
+
+#address .row {
+  margin: 0px !important;
+}
+
+.datepicker_div {
+  margin-top: 15px !important;
+}
+
+.ticket_create_margin .form-group .form-control input {
+  margin-bottom: 0px !important;
+}
+
+div#remaining_ticket_display .l-media label {
+  margin-top: 0px !important;
+  margin-left: 6px !important;
+}
+
+.form-group.eventdescription {
+  margin-top: 15px !important;
+}
+
+.ticket_create_margin .multiselect-dropdown .dropdown-btn:focus {
+  border: none !important;
+}
+
+.ticket_create_margin .form-group {
+  margin: 0px;
+}
+
+.form-group.datepicker_div .col-md-6 .form-control.ng-untouched.ng-pristine.ng-valid, .form-group.datepicker_div .col-md-6 .form-control.ng-untouched.ng-valid.ng-dirty {
+  height: 37px !important;
+  line-height: 23px !important;
+}
+
+.form-group.datepicker_after input {
+  float: left;
+  width: 100%;
+  padding: 10px 15px;
+}
+
+.right_selection {
+  float: right !important;
+  padding-left: 1% !important;
+}
+
+  .right_selection .form-control {
+    float: right !important;
+  }
+
+.form-group.datepicker_after span {
+  margin-bottom: 20px !important;
+  float: left;
+}
+
+.form-group.eventdescription .ng-valid, .form-group.organisar_description .ng-valid {
+  float: left;
+}
+
+
+.datpicker /deep/ .mydp td.daycell.disabled {
+  background: #e6e6e6 !important;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item {
+  margin: 2px 0px !important;
+}
+.ticket_border_color .form-control {
+  background-color: #f2f2f2;
+  width: 99%;
+  border: none;
+  box-shadow: none;
+  height: 40px;
+}
+.cover_inputs_cover {
+  width: 100%;
+  float: left;
+}
+  .cover_inputs_cover /deep/ span .form-control {
+    background-color: #f2f2f2;
+    border: none;
+    height: 40px;
+    box-shadow: none;
+  }
+  .cover_inputs_cover span {
+    width: 49% !important;
+    float: left;
+    margin-right: 1%;
+  }
+    .cover_inputs_cover span:last-child {
+      float: right !important;
+      margin-right: 0px !important;
+    }
+.artist_name_cover /deep/ .form-control {
+  background-color: #f2f2f2 !important;
+  border: none;
+  box-shadow: none;
+  height: 40px;
+}
+.vanue_name {
+  margin-bottom: 10px;
+}
+.datepicker_div input.form-control {
+  padding: 2px 10px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .form-group .row {
+    margin: 0px !important;
+  }
+
+  .form-control {
+    margin-bottom: 10px !important;
+  }
+
+  .event_creation_page {
+    width: 100% !important;
+  }
+
+  .form-group.col-md-12 {
+    padding: 0px !important;
+  }
+
+  .warnings.warnings_border p {
+    width: 100%;
+    float: left;
+  }
+  .cover_inputs_cover span{
+    width: 100% !important;
+    margin-right: 0px;
+  }
+}
+
+
+@media screen and (max-width: 480px) {
+  .cover_event_creation {
+    padding: 12px;
+  }
+}

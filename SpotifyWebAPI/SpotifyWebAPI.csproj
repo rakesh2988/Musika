@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E24ECFC3-C158-40E8-AC52-42B8BB8BF71E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpotifyWebAPI</RootNamespace>
+    <AssemblyName>SpotifyWebAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Web.Http.Common.4.0.20126.16343\lib\net40\System.Web.Http.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Album.cs" />
+    <Compile Include="AlbumType.cs" />
+    <Compile Include="Artist.cs" />
+    <Compile Include="Authentication.cs" />
+    <Compile Include="AuthenticationToken.cs" />
+    <Compile Include="BaseModel.cs" />
+    <Compile Include="Browse.cs" />
+    <Compile Include="ClientCredentialsAuth.cs" />
+    <Compile Include="Enums\AlbumType.cs" />
+    <Compile Include="Enums\FollowType.cs" />
+    <Compile Include="Enums\Scope.cs" />
+    <Compile Include="Enums\SearchType.cs" />
+    <Compile Include="ExternalId.cs" />
+    <Compile Include="ExternalUrl.cs" />
+    <Compile Include="Followers.cs" />
+    <Compile Include="HttpHelper.cs" />
+    <Compile Include="Image.cs" />
+    <Compile Include="Models\ArrayResponse.cs" />
+    <Compile Include="Models\BasicModel.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\CategoryList.cs" />
+    <Compile Include="Models\CategoryPlaylist.cs" />
+    <Compile Include="Models\CursorPaging.cs" />
+    <Compile Include="Models\FeaturedPlaylists.cs" />
+    <Compile Include="Models\FollowedArtists.cs" />
+    <Compile Include="Models\FullAlbum.cs" />
+    <Compile Include="Models\FullArtist.cs" />
+    <Compile Include="Models\FullPlaylist.cs" />
+    <Compile Include="Models\FullTrack.cs" />
+    <Compile Include="Models\GeneralModels.cs" />
+    <Compile Include="Models\NewAlbumReleases.cs" />
+    <Compile Include="Models\Paging.cs" />
+    <Compile Include="Models\PrivateProfile.cs" />
+    <Compile Include="Models\PublicProfile.cs" />
+    <Compile Include="Models\SearchItem.cs" />
+    <Compile Include="Models\SimpleAlbum.cs" />
+    <Compile Include="Models\SimpleArtist.cs" />
+    <Compile Include="Models\SimplePlaylist.cs" />
+    <Compile Include="Models\SimpleTrack.cs" />
+    <Compile Include="Models\Snapshot.cs" />
+    <Compile Include="Models\Token.cs" />
+    <Compile Include="Page.cs" />
+    <Compile Include="Playlist.cs" />
+    <Compile Include="PlaylistTrack.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SpotifyModel\accesstoken.cs" />
+    <Compile Include="SpotifyModel\album.cs" />
+    <Compile Include="SpotifyModel\albumarray.cs" />
+    <Compile Include="SpotifyModel\albumsearchresult.cs" />
+    <Compile Include="SpotifyModel\artist.cs" />
+    <Compile Include="SpotifyModel\artistarray.cs" />
+    <Compile Include="SpotifyModel\artistsearchresult.cs" />
+    <Compile Include="SpotifyModel\external_ids.cs" />
+    <Compile Include="SpotifyModel\external_urls.cs" />
+    <Compile Include="SpotifyModel\featuredplaylistssearchresult.cs" />
+    <Compile Include="SpotifyModel\followers.cs" />
+    <Compile Include="SpotifyModel\image.cs" />
+    <Compile Include="SpotifyModel\page.cs" />
+    <Compile Include="SpotifyModel\playlist.cs" />
+    <Compile Include="SpotifyModel\playlistsearchresult.cs" />
+    <Compile Include="SpotifyModel\playlisttrack.cs" />
+    <Compile Include="SpotifyModel\savedtrack.cs" />
+    <Compile Include="SpotifyModel\track.cs" />
+    <Compile Include="SpotifyModel\trackarray.cs" />
+    <Compile Include="SpotifyModel\tracksearchresult.cs" />
+    <Compile Include="SpotifyModel\user.cs" />
+    <Compile Include="Track.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="Util.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,45 @@
+<div  class='main-nav main_page_nav'>
+  <div class='navbar navbar-inverse'>
+    <div class="siodebar_profile_cover">
+      <span> <i class="fa fa-user fa-2x" aria-hidden="true"></i></span>
+      <div class="right_profile">
+        <h2>{{currentUser?.UserName}}</h2>
+      </div>
+    </div>
+    <div class='navbar-header'>
+      <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'
+               (click)='toggle()'>
+        <span class='sr-only'>Toggle navigation</span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+        <span class='icon-bar'></span>
+      </button>
+      <!--<a class='navbar-brand' [routerLink]='["/"]'>TicketingApp</a>-->
+    </div>
+    <div class='clearfix'></div>
+    <div class='navbar-collapse collapse' [ngClass]="{'collapse': collapsed, 'navbar-collapse': true}">
+      <ul class='nav navbar-nav'>
+        <li [routerLinkActive]='["link-active"]'>
+          <a href="#/eventlisting">
+            <span class='glyphicon glyphicon-home'></span>All Events
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a href="#/stafflisting" >
+            <span class="fa fa-users" aria-hidden="true"></span>All Staff
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a href="#/couponlisting">
+            <span class="fa fa-ticket" aria-hidden="true"></span> Coupon
+          </a>
+        </li>
+        <li [routerLinkActive]='["link-active"]'>
+          <a href="#/creditcard" >
+            <span class="fa fa-credit-card" aria-hidden="true"></span>Add Merchant Detail
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

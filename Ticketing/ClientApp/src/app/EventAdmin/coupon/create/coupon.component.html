@@ -1,0 +1,69 @@
+<ngx-spinner></ngx-spinner>
+<div style="align-content:center;">
+  <div class="col-md-8 staff_creation_left">
+    <div class="staff_creation">
+     
+      <h2>{{title}} Coupon</h2>
+      <form name="form" (ngSubmit)="register()" #formDir="ngForm" [formGroup]="registerForm" novalidate>
+        <div class="form-group">
+          <label for="auth1">Coupon Code</label>
+          <input type="text" class="form-control" name="auth1" formControlName="CouponCode" required />
+          <span class="text-danger" *ngIf="CouponCode?.invalid && formDir.submitted">
+            Code is required.
+          </span>
+        </div>
+        <div class="form-group">
+          <label  for="venuename">EventName*</label>
+          <!--<ngx-select [items]="Eventlist" optionValueField="EventID" (select)="doSelect($event)"
+              optionTextField="EventTitle" placeholder="Select EventName" class=""
+             [(ngModel)]="EventTitle1" [ngModelOptions]="{standalone: true}"></ngx-select>-->
+          <select class="form-control" formControlName="EventName" name="EventName"
+                  (change)="onchange($event)">
+            <option value="">--Select Event--</option>
+            <option [value]="c.EventID" *ngFor="let c of Eventlist">{{c.EventTitle}}</option>
+          </select>
+          <span class="text-danger" *ngIf="EventName?.invalid && formDir.submitted">
+            EventName is required.
+          </span>
+        </div>
+        
+        <div class="form-group">
+          <label  for="auth2">TicketCategory</label>
+          <!--<ngx-select [items]="categorylist" optionValueField="Id"
+                      optionTextField="TicketCategory" placeholder="Select Category" class=""
+                      formControlName="TicketCategory" required></ngx-select>-->
+          <select class="form-control" formControlName="TicketCategory"  name="TicketCategory">
+            <option value="">--Select TicketCategory--</option>
+            <option [value]="c.TicketCategory" *ngFor="let c of categorylist" >{{c.TicketCategory}}</option>
+          </select>
+          <!--<input type="text" class="form-control" name="tickettype" formControlName="TicketCategory" required />-->
+          <span class="text-danger" *ngIf="TicketCategory?.invalid && formDir.submitted">
+            Ticket Category is required.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="merchantid">ExpiryDate</label>
+          <my-date-picker class="datpicker" [options]="startDate" [selDate]="arrDate"
+                          required formControlName="ExpiryDate" placeholder="" (dateChanged)="onArrDateChanged($event)"></my-date-picker>
+          <span class="text-danger" *ngIf="ExpiryDate?.invalid && formDir.submitted">
+            ExpiryDate is required.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="merchantid">Discount</label>
+          <input type="text" class="form-control" name="merchantid" formControlName="Discount" required />
+          <span class="text-danger" *ngIf="Discount?.invalid && formDir.submitted">
+            Discount is required.
+          </span>
+        </div>
+
+
+        <div class="form-group">
+          <input type="submit" [disabled]="loading" value="Save" class="btn btn-primary" />
+          <p class={{msgcss}} *ngIf="IsMessage"><b>{{ responseMessage }} </b> </p>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

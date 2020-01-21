@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @*<meta charset="utf-8" />jquery-ui.css
+        <meta name="viewport" content="width=device-width" />*@
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>@ViewBag.Title</title>
+
+    <link href="~/Areas/Admin/Content/css/plugins/datatables/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Areas/Admin/content/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Areas/Admin/content/css/animate.css" rel="stylesheet">
+    <link href="~/Areas/Admin/content/css/style.css" rel="stylesheet">
+    <link type="text/css" href="~/Areas/Admin/Content/plugins/validationEngine/validationEngine.jquery.css" rel="stylesheet" />
+    <link type="text/css" href="~/Areas/Admin/Content/plugins/toastr/toastr.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/plugins/iCheck/custom.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/js/Sdsol.Datetimepicker/jquery.datetimepicker.css" rel="stylesheet" />
+    <link href="~/Areas/Admin/Content/css/jquery-ui.css" rel="stylesheet" />
+
+
+    <script src="~/Areas/Admin/content/js/jquery-2.1.1.js"></script>
+    <script src="~/Areas/Admin/content/js/bootstrap.min.js"></script>
+    <script src="~/Areas/Admin/content/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="~/Areas/Admin/content/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="~/Areas/Admin/content/js/inspinia.js"></script>
+    <script src="~/Areas/Admin/content/js/plugins/pace/pace.min.js"></script>
+    <base href="~/" />
+</head>
+<body>
+    @if (Session["AdminID"] == null)
+    {
+        //Response.Redirect("23.111.138.246/Admin/Login/Index");
+        Response.Redirect("23.111.138.246/Admin/Login/Index");
+    }
+    <div id="wrapper">
+        <nav class="navbar-default navbar-static-side" role="navigation">
+            <div class="sidebar-collapse">
+                <ul class="nav" id="side-menu">
+                    <li class="nav-header">
+                        <div class="dropdown profile-element" style="text-align: -webkit-center">
+                            <span>
+                                <img alt="image" class="img-circle" width="80px" heigth="80px" src=@Session["ThumbnailURL"].ToString() />
+                            </span>
+                            <span class="clear">
+                                <span class="block m-t-xs">
+                                    <strong class="font-bold">@Session["FullName"].ToString()</strong>
+                                    @*</span> <span class="text-muted text-xs block">@Session["FullName"].ToString()</span>*@
+                                </span>
+                            </span>
+                        </div>
+                        <div class="logo-element">
+                            IN+
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#"></a>
+                        <a href=@Url.Action("index", "Users")><i class="fa fa-group"></i> <span class="nav-label">Users</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "Artists")><i class="fa fa-anchor"></i> <span class="nav-label">Artists</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "Events")><i class="fa fa-ellipsis-v"></i> <span class="nav-label">Events</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "Venue")><i class="fa fa-home"></i> <span class="nav-label">Venues</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "ArtistGenre")><i class="fa fa-genderless"></i> <span class="nav-label">Artist Genre</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "Genre")><i class="fa fa-bookmark"></i> <span class="nav-label">Genre</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "NotLatin")><i class="fa fa-music"></i> <span class="nav-label">Not Latin</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "Ads")><i class="fa fa-share"></i> <span class="nav-label">Banners</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "TicketingCategory")><i class="fa fa-share"></i> <span class="nav-label">Ticketing Category</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index", "TicketInventory")><i class="fa fa-share"></i> <span class="nav-label">Ticketing Inventory</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index","TicketingUser")><i class="fa fa-child"></i> <span class="nav-label">Ticketing Users</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index","TicketingEvent")><i class="fa fa-child"></i> <span class="nav-label">Ticketing Events</span> <span class="fa arrow"></span></a>
+                        <a href=@Url.Action("index","Coupons")><i class="fa fa-child"></i> <span class="nav-label">Coupons</span> <span class="fa arrow"></span></a>
+
+                        @*<a href=@Url.Action("SubscribeList", "Dashboard")><i class="fa fa-list-alt"></i> <span class="nav-label">Subscribe</span> <span class="fa arrow"></span></a>*@
+
+                        <a href=@Url.Action("ChangePassword", "ChangePassword")><i class="fa fa-gears"></i> <span class="nav-label">Change Password</span> <span class="fa arrow"></span></a>
+
+
+                        @*<ul class="nav nav-second-level">
+            <li><a href="index-2.html">Dashboard v.1</a></li>
+            <li><a href="dashboard_2.html">Dashboard v.2</a></li>
+            <li><a href="dashboard_3.html">Dashboard v.3</a></li>
+            <li><a href="dashboard_4_1.html">Dashboard v.4</a></li>
+        </ul>*@
+                    </li>
+
+                    @*<li class="landing_link">
+                            <a target="_blank" href="Landing_page/index.html"><i class="fa fa-star"></i> <span class="nav-label">Landing Page</span> <span class="label label-warning pull-right">NEW</span></a>
+                        </li>
+                        <li class="special_link">
+                            <a href="package.html"><i class="fa fa-database"></i> <span class="nav-label">Package</span></a>
+                        </li>*@
+                </ul>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="gray-bg">
+            <div class="row border-bottom">
+                <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                    <div class="navbar-header">
+                        @*<a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>*@
+                        @*<form role="search" class="navbar-form-custom" action="">
+                                <div class="form-group">
+                                    <input type="text" placeholder="Inster Admin Portal" class="form-control" name="top-search" id="top-search">
+                                </div>
+                            </form>*@
+                    </div>
+                    <ul class="nav navbar-top-links navbar-right">
+
+                        <li>
+                            <a href=@Url.Action("index","login")>
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+                    <a href="#"></a>
+                </nav>
+            </div>
+            <div class="container body-content">
+                @RenderBody()
+                <hr />
+                <footer>
+                    <p>&copy; @DateTime.Now.Year - Musika</p>
+                </footer>
+            </div>
+        </div>
+
+    </div>
+    @*<script type="text/javascript" src="~/Areas/Admin/Content/js/jquery-1.10.2.min.js"></script>
+        <!-- Load jQuery -->
+        <script type="text/javascript" src="~/Areas/Admin/Content/js/jqueryui-1.10.3.min.js"></script>
+        <!-- Load jQueryUI -->*@
+
+    <!-- Custom and plugin javascript -->
+
+    <script type="text/javascript" src="~/Areas/Admin/Content/js/jquery-ui-1.10.4.min.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/Content/scripts/common.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/Content/scripts/Sdsol.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/Content/plugins/toastr/toastr.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/Content/plugins/validationEngine/jquery.validationEngine.js"></script>
+    <script type="text/javascript" src="~/Areas/Admin/Content/plugins/validationEngine/jquery.validationEngine-en.js"></script>
+    <script src="~/Areas/Admin/Content/js/plugins/iCheck/icheck.min.js"></script>
+    <script src="~/Areas/Admin/Content/js/Sdsol.Datetimepicker/jquery.datetimepicker.full.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/bootstrap-typeahead.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/jquery.mockjax.js"></script>
+    <script src="~/Areas/Admin/Content/scripts/MyAutocompleteLookups.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('.i-checks').iCheck({
+                checkboxClass: 'icheckbox_square-green',
+                radioClass: 'iradio_square-green',
+            });
+
+
+            jQuery('#datetimepicker1').datetimepicker({
+                formatDate: "m/d/Y",
+                formatTime: "H:i",
+                format: "m/d/Y H:i",
+                step: 15
+            });
+        });
+    </script>
+
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

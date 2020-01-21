@@ -1,0 +1,162 @@
+
+body {
+}
+.navbar-inverse .navbar-nav > li > a span.fa.fa-ticket {
+  font-size: 17px;
+  margin-right: 3px;
+}
+.main_page_nav .navbar-nav li {
+  width: 100%;
+}
+
+.main_page_nav {
+  position: relative;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  margin: 0px !important;
+  left: -15px;
+}
+
+  .main_page_nav .navbar-inverse {
+    border-color: #eaeaea;
+  }
+
+    .main_page_nav .navbar-inverse .navbar-nav > li > a {
+      color: #fff;
+    }
+
+  .main_page_nav .navbar.navbar-inverse {
+    background-color: #24344B;
+    padding-top: 77px;
+    padding-bottom: 80px;
+    position: fixed;
+    width: 16%;
+    top: 0px;
+    bottom: 0px;
+    margin: 0px;
+    border: 0px;
+    border-radius: 0px;
+  }
+
+.siodebar_profile_cover {
+  width: 100%;
+  float: left;
+  padding: 0px 30px;
+  margin-bottom: 0px;
+  background-color: #1ad0e7;
+}
+
+  .siodebar_profile_cover span {
+    width: 20%;
+    float: left;
+  }
+
+    .siodebar_profile_cover span i {
+      color: #fff;
+      float: left;
+      padding: 5px 8px;
+      border: 1px solid #fff;
+      border-radius: 100%;
+      font-size: 22px;
+      margin: 6px 0px;
+    }
+
+  .siodebar_profile_cover .right_profile {
+    width: 80%;
+    float: left;
+    padding-left: 5px;
+  }
+
+    .siodebar_profile_cover .right_profile h2 {
+      margin: 0px;
+      font-size: 16px;
+      font-weight: 700;
+      margin-top: 15px;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+.right_profile p {
+  margin: 0px;
+  color: #fff;
+}
+
+span.glyphicon.glyphicon-home {
+  margin-right: 10px;
+}
+
+span.fa-users:before {
+  margin-right: 10px;
+}
+
+.navbar-collapse.collapse {
+  float: left;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.navbar-collapse ul.nav.navbar-nav li {
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+}
+
+.navbar-collapse ul.nav.navbar-nav {
+  width: 100%;
+}
+
+.fa-credit-card:before {
+  margin-right: 10px;
+}
+
+.link-active {
+  background-color: #444444;
+}
+
+@media screen and (max-width: 991px) {
+  .siodebar_profile_cover .right_profile {
+    width: 80%;
+    float: left;
+    padding-left: 34px;
+  }
+
+  .navbar-collapse.collapse ul li a {
+    padding: 10px 8px !important;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .siodebar_profile_cover .right_profile {
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+
+  .col-sm-3 {
+    padding: 0px !important;
+  }
+
+  .main_page_nav .navbar.navbar-inverse {
+    padding-top: 111px !important;
+    padding-bottom: 0px;
+    position: relative;
+    width: 100%;
+    bottom: 100%;
+    margin: 10px 0px 0px 0px;
+  }
+
+  .main_page_nav {
+    left: 0px;
+  }
+
+  .siodebar_profile_cover {
+    width: 50%;
+    background-color: transparent;
+  }
+
+  .navbar-header .navbar-toggle {
+    margin-top: 4px;
+  }
+}

@@ -1,0 +1,38 @@
+<div style="align-content:center;">
+  <div class="col-md-8 staff_creation_left">
+    <div class="staff_creation">
+      <p class="text-danger" *ngIf="IsCreditMessage"><b>First You have to fill the Merchant detail.</b> </p>
+      <h2>Credit Card</h2>
+      <form name="form" (ngSubmit)="register()" #formDir="ngForm" [formGroup]="registerForm" novalidate>
+        <div class="form-group">
+          <label for="auth1">Auth 1</label>
+          <input type="text" class="form-control" name="auth1" formControlName="Auth1" required />
+          <span class="text-danger" *ngIf="Auth1?.invalid && formDir.submitted">
+            Auth 1 is required.
+          </span>
+        </div>
+
+        <div class="form-group">
+          <label for="auth2">Auth 2</label>
+          <input type="text" class="form-control" name="auth2" formControlName="Auth2" required />
+          <span class="text-danger" *ngIf="Auth2?.invalid && formDir.submitted">
+            Auth 2 is required.
+          </span>
+        </div>
+        <div class="form-group">
+          <label for="merchantid">Merchant Id</label>
+          <input type="text" class="form-control" name="merchantid" formControlName="MerchantId" required />
+          <span class="text-danger" *ngIf="MerchantId?.invalid && formDir.submitted">
+            MerchantId is required.
+          </span>
+        </div>
+
+        <div class="form-group">
+          <input type="submit" [disabled]="loading" value="Save" class="btn btn-primary" />
+          <p class={{msgcss}} *ngIf="IsMessage"><b>{{ responseMessage }} </b> </p>
+          <img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

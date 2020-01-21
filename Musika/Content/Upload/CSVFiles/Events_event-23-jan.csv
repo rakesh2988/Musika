@@ -1,0 +1,25 @@
+Event Detail
+ Event_Name, Event_Description, ArtistName, BannerImage_URL, CreatedDate, EventDate, Decade, ImageURL, Main_Genre, ModifiedDate, NoOfUserGoing, Organizer_Description, Organizer_Name, TicketURL, About, VenueCity, VenueCountry, VenueName, VenueState, Alternate_Names, Time_Local
+ event-23-jan, fgdfgdfgfd, Baby Rasta, https://i.scdn.co/image/bb5b8bc7fe6c1adc9cb734da1988c41c119f6a7c, 8/26/2016 06:59:56 PM, 1/25/2019, 2000s, https://i.scdn.co/image/bb5b8bc7fe6c1adc9cb734da1988c41c119f6a7c, latin, 10/1/2018 09:29:11 PM, 0, dfgdfgfdg, sdogra, http://23.111.138.246/TicketEventCheckout.aspx, , , , , , , 01:00 AM
+Event Tickets Detail
+
+
+ EventId, TicketCategory, TicketType, Price, Quantity, BalanceTickets, PackageStartDate, PackageEndDate
+ 1, t1, Paid, 100.00, 100, 96, 1/24/2019 12:00:00 AM, 1/31/2019 12:00:00 AM
+ 1, t2, Paid, 100.00, 100, 99, 1/24/2019 12:00:00 AM, 1/31/2019 12:00:00 AM
+ 1, t3, Free, 0.00, 19, 0, 1/24/2019 12:00:00 AM, 1/31/2019 12:00:00 AM
+Sold/Unsold Ticket Detail
+
+
+ Category, TotalTickets, Sold, Attendees, UnSold
+ Paid, 100, 4, 0, 96
+ Paid, 100, 1, 0, 99
+ Free, 19, 19, 0, 0
+User Ticket Buy Detail
+
+
+ UserName, Gender, Country, Email, TicketCategory, TicketType
+ sd, Female, US, shalludogra.eminence-buyer@gmail.com, t2, Paid
+ smusika, Male, Djjs, s@gmail.com, t3, Free
+ smusika, Female, Hdnsh, s@gmail.com, t3, Free
+ smusika, Female, US, shalludogra.eminence-buyer@gmail.com, t1, Paid

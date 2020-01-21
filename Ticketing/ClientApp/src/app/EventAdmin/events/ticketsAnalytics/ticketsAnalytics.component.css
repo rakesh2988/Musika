@@ -1,0 +1,142 @@
+
+p a {
+  width: auto;
+  float: left;
+  padding: 9px 20px;
+  background-color: #1ad0e7;
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0px;
+}
+
+canvas.chartjs-render-monitor {
+  /*width: 770px !important;
+  height: 365px !important;*/
+}
+
+table.table_top {
+  border: 1px solid #ccc;
+}
+
+  table.table_top tr td, table.table_top tr th {
+    border-right: 1px solid #ddd;
+    text-align: center;
+  }
+
+.heading_styling h2 {
+  float: left;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+#chart-container {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.chartjs-size-monitor {
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  box-sizing: border-box;
+  float: left
+}
+
+#chart-container1 {
+  float: none;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  padding: 22px 0px;
+  display: inline-block;
+}
+
+.age_analytics {
+  border-bottom: 2px solid #1ad0e7;
+  padding-bottom: 7px;
+  margin-bottom: 30px !important;
+  margin-top: 60px;
+}
+
+.listing_page {
+  width: 94%;
+  float: left;
+}
+
+.col-md-6.classcol-1 {
+  padding: 0px;
+}
+
+.listing_page h2 {
+  border-bottom: 2px solid #1ad0e7;
+  padding-bottom: 7px;
+  margin-bottom: 40px !important;
+  margin-top: 30px;
+}
+
+.table-responsive {
+  border: none !important;
+}
+
+.cover_ticket_analytic {
+  width: 100%;
+  float: left;
+  text-align: center;
+}
+
+  .cover_ticket_analytic .classcol-1 {
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 30px;
+  }
+
+  .cover_ticket_analytic h2 {
+    text-align: left;
+    margin-top: 70px !important;
+  }
+
+.user_data_cover {
+  float: left;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+
+
+@media screen and (max-width: 767px) {
+  .table tr th {
+    font-size: 11px;
+    font-weight: 400;
+    padding: 8px 3px !important;
+  }
+
+  .col-md-12.heading_styling {
+    padding: 0px;
+  }
+
+  .heading_styling .col-md-6 {
+    padding: 0px;
+  }
+
+  .heading_styling .col-md-6 {
+    padding: 0px !important;
+  }
+
+  .listing_page {
+    width: 100%;
+  }
+
+  .event_listing_page {
+    padding-bottom: 0px !important;
+  }
+
+  .col-md-8.classcol-1 {
+    width: 96%;
+  }
+
+  .listing_page h2 {
+    font-size: 24px;
+  }
+}
